@@ -9,6 +9,6 @@ angular.module('myApp.gallery', ['ngRoute'])
   });
 }])
 
-.controller('GalleryCtrl', [function() {
-
+.controller('GalleryCtrl', ['$scope', function ($scope) {
+  $scope.pageTitle = "Gallery Page";
 }]);

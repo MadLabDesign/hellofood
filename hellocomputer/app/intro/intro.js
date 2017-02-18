@@ -11,8 +11,10 @@ angular.module('myApp.intro', ['ngRoute'])
   });
 }])
 
-.controller('IntroCtrl', [function() {
-$(".scroll").click(function(event){
+.controller('IntroCtrl', ['$scope', function($scope) {
+    $scope.hero = " Pear Parfait with Bayleaf";
+
+    $(".scroll").click(function(event){
          event.preventDefault();
          //calculate destination place
          var dest=0;
@@ -24,7 +26,7 @@ $(".scroll").click(function(event){
          //go to destination
          $('html,body').animate({scrollTop:dest}, 1000,'swing');
      });
-}]);
 
+}]);
 
 

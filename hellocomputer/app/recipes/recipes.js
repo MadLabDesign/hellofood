@@ -10,6 +10,9 @@ angular.module('myApp.recipes', ['ngRoute'])
     }])
 
     .controller('RecipesCtrl', ['$scope', function ($scope) {
+         $scope.hero = " Pear Parfait with Bayleaf";
+        $scope.pageTitle = "Recipes Page";
+
         $scope.title = "title here";
         $scope.type = "type here";
         $scope.release = "release here";
