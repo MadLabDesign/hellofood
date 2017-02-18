@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" data-ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" data-ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" data-ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" data-ng-app="myApp" class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HelloFoods</title>
+
+    <!--START Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="vendor/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="vendor/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="vendor/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="vendor/favicons/manifest.json">
+    <link rel="mask-icon" href="vendor/favicons/safari-pinned-tab.svg" color="#1e293c">
+    <meta name="apple-mobile-web-app-title" content="HelloFood">
+    <meta name="application-name" content="HelloFood">
+    <meta name="theme-color" content="#1e293c">
+    <!--END Favicon -->
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="vendor/css/base.css" rel="stylesheet">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-4">
+
+                <a href="#!/intro">
+                    <div class="logo"></div>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-8">
+                <ul class="menu">
+                    <li><a href="#!/intro"  title="HellFood home page">Intro</a></li>
+                    <li><a href="#!/recipes" title="Latest Recipes">Recipes</a></li>
+                    <li><a href="#!/gallery" title="Gallery view">Gallery</a></li>
+                    <li><a href="#!/contact" title="Stay intouch">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div ng-view></div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#!/intro" class="footer-logo" title="Hellofood"> <img src="vendor/img/logo-dark.png"></a>
+            </div>
+            <div class="col-md-9 text-right">
+
+                <div class="social-media">
+                    <ul class="inline-list">
+                        <li>+27 21 555 5555</li>
+                        <li><a href="mailto:info@hellocomputer.com">info@hellocomputer.com</a></li>
+                        <li><a href="#" title="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="#" title="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="#" title="" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--Scripts-->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+
+<script src="vendor/js/vendor/animated-header/classie.js"></script>
+<script src="vendor/js/vendor/animated-header/cbpAnimatedHeader.js"></script>
+
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+
+<script src="vendor/js/app.js"></script>
+<script src="intro/intro.js"></script>
+<script src="recipes/recipes.js"></script>
+<script src="gallery/gallery.js"></script>
+<script src="contact/contact.js"></script>
+
+
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+
+
+
+</body>
+</html>

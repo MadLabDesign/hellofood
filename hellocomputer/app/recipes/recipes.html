@@ -1,0 +1,85 @@
+<div ng-controller="RecipesCtrl">
+    <div id="intro-banner" style="background: url(vendor/img/hero-banners/home/intro-banner.png);">
+
+    </div>
+
+    <div class="container">
+        <section>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Recipes Page</h2>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="row">
+               <form class="form-horizontal" role="form" ng-submit="addRow()">
+	<div class="form-group">
+		<label class="col-md-2 control-label">Title</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="title"
+				ng-model="title" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">type</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="type"
+				ng-model="type" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">release</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="release"
+				ng-model="release" />
+		</div>
+	</div>
+	<div class="form-group">
+		<div style="padding-left:110px">
+			<input type="submit" value="Submit" class="button primary"/>
+		</div>
+	</div>
+</form>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Search</label>
+                    <input type="search">
+                </div>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="row">
+                <div class="col-md-12">
+                    <table width="100%">
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Release</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{{title}}</td>
+                            <td>{{type}}</td>
+                            <td>{{release}}</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

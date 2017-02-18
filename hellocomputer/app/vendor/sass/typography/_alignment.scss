@@ -1,0 +1,10 @@
+
+@mixin hello-text-alignment {
+  @each $align in (left, right, center, justify) {
+    .text-#{$align} {
+            text-align: $align;
+          }
+  }
+
+
+}

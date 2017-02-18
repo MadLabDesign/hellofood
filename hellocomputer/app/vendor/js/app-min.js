@@ -1,0 +1,1 @@
+"use strict";angular.module("myApp",["ngRoute","myApp.intro","myApp.test","myApp.recipes","myApp.gallery","myApp.contact","myApp.version"]).config(["$locationProvider","$routeProvider",function(e,r){e.hashPrefix("!"),r.otherwise({redirectTo:"/intro"})}]);

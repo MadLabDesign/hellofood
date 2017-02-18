@@ -1,0 +1,9 @@
+@mixin hello-typography-base {
+  // Paragraphs
+  p {
+    font-size: inherit;
+    line-height: $paragraph-lineheight;
+    margin-bottom: $paragraph-margin-bottom;
+    text-rendering: $paragraph-text-rendering;
+  }
+}
