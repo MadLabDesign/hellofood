@@ -28,6 +28,13 @@ body {
   font-size: $global-font-size;
   color: $body-font-color;
   font-weight: 300;
+  line-height: $paragraph-lineheight;
+}
+
+@media screen and (max-width: 640px) {
+  body {
+    font-size: $global-font-size - 20;
+  }
 }
 
 a {
@@ -71,15 +78,12 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 10000;
   padding: 2em 0;
   height: 100px;
-  overflow: hidden;
 
-  -webkit-transition: background-color 0.8s ease;
-  -moz-transition: background-color 0.8s ease;
-  transition: background-color 0.8s ease;
 
-  -webkit-transition: height 0.8s ease;
-  -moz-transition: height 0.8s ease;
-  transition: height 0.8s ease;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+
 
   .logo {
     background-image: url("../img/logo-light.png");
@@ -160,6 +164,21 @@ h1, h2, h3, h4, h5, h6 {
   transform: scaleX(1);
 }
 
+@media screen and (max-width: 55em) {
+  .header, .header-shrink {
+    height: 50px;
+    padding: 0.7em 0;
+
+    .logo {
+      background-size: 140px auto;
+      width: 150px;
+      height: 40px;
+    }
+  }
+}
+
+
+
 .scroll-block {
   z-index: 9999999;
   width: 100%;
@@ -209,8 +228,6 @@ section#recipe-intro {
   }
 }
 
-
-
 //Internal banner
 
 #intro-banner {
@@ -239,7 +256,6 @@ section#recipe-intro {
     }
   }
 }
-
 
 //Footer
 

@@ -28,30 +28,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="vendor/css/base.css" rel="stylesheet">
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>
 <body>
+
 
 <div class="header">
     <div class="container">
         <div class="row">
             <div class="col-xs-6 col-sm-4">
-
                 <a href="#!/intro">
                     <div class="logo"></div>
                 </a>
             </div>
             <div class="col-xs-6 col-sm-8">
-                <ul class="menu">
-                    <li><a href="#!/intro"  title="HellFood home page">Intro</a></li>
-                    <li><a href="#!/recipes" title="Latest Recipes">Recipes</a></li>
-                    <li><a href="#!/gallery" title="Gallery view">Gallery</a></li>
-                    <li><a href="#!/contact" title="Stay intouch">Contact</a></li>
-                </ul>
+                <nav>
+                    <a href="#" class="close-panel"><i class="icon-remove-sign icon-large"></i></a>
+                    <ul class="menu">
+                        <li><a href="#!/intro" title="HellFood home page">Intro</a></li>
+                        <li><a href="#!/recipes" title="Latest Recipes">Recipes</a></li>
+                        <li><a href="#!/gallery" title="Gallery view">Gallery</a></li>
+                        <li><a href="#!/contact" title="Stay intouch">Contact</a></li>
+                    </ul>
+                </nav>
+
             </div>
         </div>
     </div>
 </div>
-
 
 <div ng-view></div>
 
@@ -80,13 +84,14 @@
     </div>
 </footer>
 
+
 <!--Scripts-->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 
 
 <script src="vendor/js/vendor/animated-header/classie.js"></script>
 <script src="vendor/js/vendor/animated-header/cbpAnimatedHeader.js"></script>
-
+<script src="bower_components/Flowtype.js/flowtype.js"></script>
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
@@ -101,7 +106,6 @@
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
-
 
 
 </body>
