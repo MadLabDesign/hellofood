@@ -14,7 +14,7 @@
 
     <section>
         <div class="row">
-            <form class="form-horizontal" role="form" ng-submit="addRow()">
+            <form class="form-horizontal" role="form" ng-submit="addRow($event)">
                 <div class="form-group">
                     <label class="col-md-2 control-label">Title</label>
 
@@ -27,16 +27,15 @@
                     <label class="col-md-2 control-label">type</label>
 
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="type"
-                               ng-model="type"/>
+                        <input type="text" class="form-control" name="type" ng-model="type"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">release</label>
 
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="release"
-                               ng-model="release"/>
+                        <input type="text" class="form-control" name="release" ng-model="release" />
+
                     </div>
                 </div>
                 <div class="form-group">
@@ -71,10 +70,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>{{title}}</td>
-                        <td>{{type}}</td>
-                        <td>{{release}}</td>
+                    <tr ng-repeat="recipe in recipes">
+                        <td>{{recipe.title}}</td>
+                        <td>{{recipe.type}}</td>
+                        <td>{{recipe.release}}</td>
                     </tr>
 
                     </tbody>

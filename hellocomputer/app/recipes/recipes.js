@@ -10,18 +10,25 @@ angular.module('myApp.recipes', ['ngRoute'])
     }])
 
     .controller('RecipesCtrl', ['$scope', function ($scope) {
-         $scope.hero = " Pear Parfait with Bayleaf";
+
+        $scope.hero = " Pear Parfait with Bayleaf";
         $scope.pageTitle = "Recipes Page";
 
         $scope.title = "title here";
         $scope.type = "type here";
         $scope.release = "release here";
 
-    }]);
 
-$scope.addRow = function(){
-	$scope.recipes.push({ 'title':$scope.title, 'type': $scope.type, 'release':$scope.release });
-	$scope.title='';
-	$scope.type='';
-	$scope.release='';
-};
+
+        $scope.recipes = [{ 'title': 'fuck', 'type': 'work', 'release':'$scope.release' }];
+
+        $scope.addRow = function(){
+    
+            $scope.recipes.push({ 'title':$scope.title, 'type': $scope.type, 'release':$scope.release });
+            $scope.title='';
+            $scope.type='';
+            $scope.release='';
+        };
+  
+}]);
+
