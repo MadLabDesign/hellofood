@@ -15,15 +15,6 @@ angular.module('myApp.intro', ['ngRoute'])
     $scope.hero = " Pear Parfait with Bayleaf";
 
 
-    $('h1').flowtype({
-        minimum : 0,
-        maximum : 640,
-        minFont : 25,
-        maxFont : 80,
-        fontRatio : 5
-    });
-
-
     $(".scroll").click(function(event){
          event.preventDefault();
          //calculate destination place

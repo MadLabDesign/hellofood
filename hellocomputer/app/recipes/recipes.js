@@ -11,16 +11,15 @@ angular.module('myApp.recipes', ['ngRoute'])
 
     .controller('RecipesCtrl', ['$scope', function ($scope) {
 
-        $scope.hero = " Pear Parfait with Bayleaf";
+        $scope.hero = "Add and view our recipes";
         $scope.pageTitle = "Recipes Page";
 
-        $scope.title = "title here";
-        $scope.type = "type here";
-        $scope.release = "release here";
+        $scope.title = "";
+        $scope.type = "";
+        $scope.release = "";
 
 
-
-        $scope.recipes = [{ 'title': 'fuck', 'type': 'work', 'release':'$scope.release' }];
+        $scope.recipes = [{ 'title': '', 'type': '', 'release':'' }];
 
         $scope.addRow = function(){
     
