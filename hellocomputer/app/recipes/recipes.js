@@ -28,6 +28,6 @@ angular.module('myApp.recipes', ['ngRoute'])
             $scope.type='';
             $scope.release='';
         };
-  
+
 }]);
 

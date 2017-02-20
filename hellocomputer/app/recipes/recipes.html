@@ -13,73 +13,78 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h2>{{pageTitle}}</h2>
+                <h2 class="text-center">{{pageTitle}}</h2>
             </div>
         </div>
 
     </section>
 
-    <section class="form-module">
-        <div class="row">
-            <form role="form" ng-submit="addRow($event)">
 
-                <div>
-                    <label>Title <br/>
-                        <input type="text" name="title" ng-model="title"/>
-                    </label>
-                </div>
+    <div class="row">
+        <div class="col-md-4">
+            <section class="card form-module">
+                <form role="form" ng-submit="addRow($event)">
+                    <div>
+                        <label>Title<br/>
+                            <input type="text" name="title" ng-model="title"/>
+                        </label>
+                    </div>
 
-                <div>
-                    <label>type <br/>
-                        <input type="text" name="type" ng-model="type"/>
-                    </label>
-                </div>
+                    <div>
+                        <label>Type<br/>
+                            <input type="text" name="type" ng-model="type"/>
+                        </label>
+                    </div>
 
-                <div>
-                    <label>release <br/>
-                        <input type="text" name="release" ng-model="release"/>
-                    </label>
-                </div>
+                    <div>
+                        <label>Release<br/>
+                            <input type="text" name="release" ng-model="release"/>
+                        </label>
+                    </div>
 
-                <div>
-                    <input type="submit" value="Submit" class="button primary expanded"/>
-                </div>
-            </form>
+                    <div>
+                        <input type="submit" value="Submit" class="button primary expanded"/>
+                    </div>
+                </form>
+            </section>
         </div>
-    </section>
 
+        <div class="col-md-8">
+            <section class="search-module">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Search</label>
+                        <input type="search">
+                    </div>
+                </div>
+            </section>
 
-    <section class="search-module">
-        <div class="row">
-            <div class="col-md-12">
-                <label>Search</label>
-                <input type="search">
-            </div>
+            <section class="output-module">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table width="100%">
+                            <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Type</th>
+                                <th>Release</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="recipe in recipes">
+                                <td>{{recipe.title}}</td>
+                                <td>{{recipe.type}}</td>
+                                <td>{{recipe.release}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
+
+    </div>
 
 
-    <section class="output-module">
-        <div class="row">
-            <div class="col-md-12">
-                <table width="100%">
-                    <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Type</th>
-                        <th>Release</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="recipe in recipes">
-                        <td>{{recipe.title}}</td>
-                        <td>{{recipe.type}}</td>
-                        <td>{{recipe.release}}</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
 </div>
 
