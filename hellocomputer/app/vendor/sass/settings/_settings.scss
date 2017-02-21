@@ -1,18 +1,24 @@
 //Setting file for Hello computer - Hellofood project
 
 //Table of Content"
-//
-// 1. Global
-// 2. base Typography
-// 3. buttons
+// 1. Grid
+// 2. Global
+// 3. Base Typography
+// 4. Buttons
 
 
 @import '../util/modules';
 
+
+// 1. Grid
+//-------------
+
 $container-fluid-max-width: 100%;
+$container-padding: 10px;
+$row-margin-removed: -10px;
+$col-padding: $container-padding;
 
-
-// 1. Global
+// 2. Global
 //-------------
 
 $global-font-size: 100%;
@@ -40,7 +46,7 @@ $print-transparent-backgrounds: true;
 
 @include add-galaxy-colors;
 
-// 2. Base Typography
+// 3. Base Typography
 // ------------------
 
 $body-font-color: $primary-color !default;
@@ -81,7 +87,7 @@ $paragraph-margin-bottom: 1rem !default;
 $paragraph-text-rendering: optimizeLegibility !default;
 
 
-// 3. Buttons
+// 4. Buttons
 // ------------------
 
 $button-padding: 0.70em 2em;
