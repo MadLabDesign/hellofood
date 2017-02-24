@@ -25,6 +25,13 @@ $pesticide-debug-depth: false;
 @import "fragments/button";
 @import "fragments/image-masonry";
 
+
+
+//Components
+//Single sections used throughout the framework
+@import "components/recipePage/modules";
+
+
 //global Styles
 @import "global";
 

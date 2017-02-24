@@ -1,0 +1,51 @@
+.recipe-list {
+
+  font-size: 14px;
+  [class *= "col-" ] {
+    padding: 0 5px;
+  }
+
+  li.recipe-list-card {
+    @include card();
+    border: 1px solid $medium-gray;
+  }
+  .img-thumbnail {
+    background-color: red;
+    height: 70px;
+    width: 100%;
+  }
+
+}
+
+.recipe-list-header {
+
+  width: 100%;
+  display: inline-block;
+
+  .title {
+    font-size: 18px;
+    line-height: 1.2;
+    color: $primary-color;
+  }
+  .created {
+    font-size: 12px;
+    color: $medium-gray;
+  }
+  .date {
+    font-size: 10px;
+    color: $dark-gray;
+    text-align: right;
+  }
+}
+
+.recipe-list-main {
+  font-size: 12px;
+  border-top: 1px solid $secondary-color;
+  display: inline-block;
+  padding-top: $global-padding;
+  width: 100%;
+
+  ul li {
+    padding: 5px;
+  }
+}

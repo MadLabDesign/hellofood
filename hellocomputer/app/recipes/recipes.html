@@ -8,83 +8,211 @@
     </div>
 </div>
 
+<nav class="sub-nav">
+    <div class="container">
+        <div class="col-md-8">
+            <ul class="inline-list">
+                <li><a href="#!/breakfast">Breakfast</a></li>
+                <li><a href="#!/lunch">Lunch</a></li>
+                <li><a href="#!/beverages">Beverages</a></li>
+                <li><a href="#!/salads">Salads</a></li>
+                <li><a href="#!/main">Main</a></li>
+                <li><a href="#!/sidedish">Side Dish</a></li>
+                <li><a href="#!/dessert">Dessert</a></li>
+                <li><a href="#!/entertaining">Entertaining</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <button class="button primary small hollow">submit your flavour</button>
+        </div>
+    </div>
+</nav>
+
+<section id="recipe-submit-dropdown">
+    <div class="container">
+        <div class="row">
+            <form role="form" ng-submit="addRow($event)">
+                <div class="col-md-3">
+                    upload image
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Title<br/>
+                                <input type="text" name="title" ng-model="title"/>
+                            </label>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>Created by<br/>
+                                <input type="text" name="created" ng-model="created"/>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Release<br/>
+                                <input type="text" name="release" ng-model="release"/>
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Cooking time<br/>
+                                <input type="text" name="cooking" ng-model="cooking"/>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Type<br/>
+                                <input type="text" name="type" ng-model="type"/>
+                            </label>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>Difficulty<br/>
+                                <input type="text" name="difficulty" ng-model="difficulty"/>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+
+                    <label>servings<br/>
+                        <input type="text" name="servings" ng-model="servings"/>
+                    </label>
+                    <br/>
+                    <button class="button secondary expanded small">Upload Recipe</button>
+                    <div>
+                        <input type="submit" value="Submit" class="button primary expanded"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <section class="recipe-list">
+            <div class="row">
+                <div class="col-md-12">
+                    <li class="recipe-list-card" ng-repeat="recipe in recipes">
+
+                <div class="col-md-2">
+                    <div class="img-thumbnail">ss</div>
+                </div>
+                <div class="col-md-10">
+                    <div class="recipe-list-header">
+                        <div class="col-md-10">
+                            <div class="title">
+                                Title {{recipe.title}}
+                            </div>
+                            <div class="created">
+                                Created by {{recipe.created}}
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="date">Date: {{recipe.release}}</div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-list-main">
+                        <div class="col-md-12">
+                            <ul class="inline-list">
+                                <li>
+                                    <span class="fa fa-clock-o" aria-hidden="true"></span>
+                                    <time>{{recipe.cooking}}</time>
+                                </li>
+                                <li>
+                                    <span class="fa fa-star" aria-hidden="true"></span>
+                                    <span class="fa fa-star" aria-hidden="true"></span>
+                                    <span class="fa fa-star" aria-hidden="true"></span>
+                                    <span class="fa fa-star-o" aria-hidden="true"></span>
+                                    <span class="fa fa-star-o" aria-hidden="true"></span>
+                                    <difficulty>Difficulty</difficulty>
+                                </li>
+                                <li>
+                                    <span class="fa fa-cutlery" aria-hidden="true"></span>
+                                    <serving>{{recipe.servings}}</serving>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+
 <div class="container">
     <section>
-
         <div class="row">
             <div class="col-md-12">
                 <h2 class="text-center">{{pageTitle}}</h2>
             </div>
         </div>
-
     </section>
 
+    <section class="recipe-list">
+        <ul class="small-block-grid-1 medium-block-grid-2">
 
-    <div class="row">
-        <div class="col-md-4">
-            <section class="card form-module">
-                <form role="form" ng-submit="addRow($event)">
-                    <div>
-                        <label>Title<br/>
-                            <input type="text" name="title" ng-model="title"/>
-                        </label>
+            <li class="recipe-list-card">
+
+                <div class="col-md-2">
+                    <div class="img-thumbnail">ss</div>
+                </div>
+                <div class="col-md-10">
+                    <div class="recipe-list-header">
+                        <div class="col-md-10">
+                            <div class="title">
+                               Breakfast Doughnuts
+                            </div>
+                            <div class="created">
+                                Created by HelloFood
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="date">07 Aug 2017</div>
+                        </div>
                     </div>
 
-                    <div>
-                        <label>Type<br/>
-                            <input type="text" name="type" ng-model="type"/>
-                        </label>
-                    </div>
+                    <div class="recipe-list-main">
+                        <div class="col-md-12">
+                            <ul class="inline-list">
+                                <li>
+                                    <span class="fa fa-clock-o" aria-hidden="true"></span>
+                                    <time>35 Minutes</time>
+                                </li>
+                                <li>
+                                    <span class="fa fa-star" aria-hidden="true"></span>
+                                    <span class="fa fa-star" aria-hidden="true"></span>
+                                    <span class="fa fa-star" aria-hidden="true"></span>
+                                    <span class="fa fa-star-o" aria-hidden="true"></span>
+                                    <span class="fa fa-star-o" aria-hidden="true"></span>
+                                    <difficulty>Not to Tricky</difficulty>
+                                </li>
+                                <li>
+                                    <span class="fa fa-cutlery" aria-hidden="true"></span>
+                                    <serving>4</serving>
+                                </li>
 
-                    <div>
-                        <label>Release<br/>
-                            <input type="text" name="release" ng-model="release"/>
-                        </label>
-                    </div>
-
-                    <div>
-                        <input type="submit" value="Submit" class="button primary expanded"/>
-                    </div>
-                </form>
-            </section>
-        </div>
-
-        <div class="col-md-8">
-            <section class="search-module">
-                <div class="row">
-                    <div class="col-md-12">
-                        <label>Search</label>
-                        <input type="search">
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </section>
-
-            <section class="output-module">
-                <div class="row">
-                    <div class="col-md-12">
-                        <table width="100%">
-                            <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Type</th>
-                                <th>Release</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr ng-repeat="recipe in recipes">
-                                <td>{{recipe.title}}</td>
-                                <td>{{recipe.type}}</td>
-                                <td>{{recipe.release}}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-    </div>
+            </li>
 
 
+
+
+
+
+
+        </ul>
+    </section>
 </div>
 

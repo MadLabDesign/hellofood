@@ -11,23 +11,47 @@ angular.module('myApp.recipes', ['ngRoute'])
 
     .controller('RecipesCtrl', ['$scope', function ($scope) {
 
-        $scope.hero = "Add and view our recipes";
-        $scope.pageTitle = "Recipes Page";
+        $scope.hero = "Lets Start Cooking!";
+        $scope.pageTitle = "The Recipe | The Breakfast Club";
 
         $scope.title = "";
-        $scope.type = "";
+        $scope.created = "";
         $scope.release = "";
+        $scope.cooking = "";
+        $scope.type = "";
+        $scope.difficulty = "";
+        $scope.servings = "";
 
 
-        $scope.recipes = [{ 'title': '', 'type': '', 'release':'' }];
+        $scope.recipes = [{
+            'title': '',
+            'created': '',
+            'release': '',
+            'cooking': '',
+            'type': '',
+            'difficulty': '',
+            'servings': ''
+        }];
 
-        $scope.addRow = function(){
-    
-            $scope.recipes.push({ 'title':$scope.title, 'type': $scope.type, 'release':$scope.release });
-            $scope.title='';
-            $scope.type='';
-            $scope.release='';
+        $scope.addRow = function () {
+
+            $scope.recipes.push({
+                'title': $scope.title,
+                'created': $scope.created,
+                'release': $scope.release,
+                'cooking': $scope.cooking,
+                'type': $scope.type,
+                'difficulty': $scope.difficulty,
+                'servings': $scope.servings
+            });
+            $scope.title = '';
+            $scope.created = '';
+            $scope.release = '';
+            $scope.cooking = '';
+            $scope.type = '';
+            $scope.difficulty = '';
+            $scope.servings = '';
         };
 
-}]);
+    }]);
 

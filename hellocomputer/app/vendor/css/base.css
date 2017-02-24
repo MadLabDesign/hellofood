@@ -3074,6 +3074,50 @@
   overflow: visible;
   clip: auto; }
 
+#recipe-submit-dropdown {
+  background-color: #fefefe; }
+
+.recipe-list {
+  font-size: 14px; }
+  .recipe-list [class*="col-"] {
+    padding: 0 5px; }
+  .recipe-list li.recipe-list-card {
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #fefefe;
+    padding: 10px !important;
+    margin: 0;
+    display: block;
+    border: 1px solid #cacaca; }
+  .recipe-list .img-thumbnail {
+    background-color: red;
+    height: 70px;
+    width: 100%; }
+
+.recipe-list-header {
+  width: 100%;
+  display: inline-block; }
+  .recipe-list-header .title {
+    font-size: 18px;
+    line-height: 1.2;
+    color: #1b2640; }
+  .recipe-list-header .created {
+    font-size: 12px;
+    color: #cacaca; }
+  .recipe-list-header .date {
+    font-size: 10px;
+    color: #4A4A4A;
+    text-align: right; }
+
+.recipe-list-main {
+  font-size: 12px;
+  border-top: 1px solid #c5b75b;
+  display: inline-block;
+  padding-top: 10px;
+  width: 100%; }
+  .recipe-list-main ul li {
+    padding: 5px; }
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
    * 1. Set default font family to sans-serif.
@@ -3470,14 +3514,20 @@ a {
   text-decoration: none;
   color: #cacaca; }
 
+ul.inline-list {
+  margin: 0;
+  padding: 0; }
+
 ul.inline-list li {
   display: inline;
-  list-style-type: none;
-  padding-right: 20px; }
+  list-style-type: none; }
 
 .no-padding {
   padding-left: 0 !important;
   padding-right: 0 !important; }
+
+input {
+  width: 100%; }
 
 section {
   padding: 40px 0; }
@@ -3579,6 +3629,14 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 30px;
   line-height: 110px;
   background: url("../img/scroll-arrow.svg") no-repeat center; }
+
+nav.sub-nav {
+  min-height: 60px;
+  width: 100%;
+  background-color: #1b2640; }
+  nav.sub-nav ul.inline-list li {
+    padding: 10px;
+    line-height: 60px; }
 
 #hero {
   background-color: #1b2640;
