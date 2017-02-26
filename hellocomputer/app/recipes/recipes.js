@@ -1,15 +1,17 @@
 'use strict';
 
-angular.module('myApp.recipes', ['ngRoute'])
+angular.module('myApp.recipes', ['ngRoute', 'valdr'])
 
-    .config(['$routeProvider', function ($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider, valdrProvider) {
         $routeProvider.when('/recipes', {
             templateUrl: 'recipes/recipes.html',
             controller: 'RecipesCtrl'
         });
+
     }])
 
     .controller('RecipesCtrl', ['$scope', function ($scope) {
+
 
         $scope.hero = "Lets Start Cooking!";
         $scope.pageTitle = "The Recipe | The Breakfast Club";
@@ -53,5 +55,7 @@ angular.module('myApp.recipes', ['ngRoute'])
             $scope.servings = '';
         };
 
+
     }]);
+
 

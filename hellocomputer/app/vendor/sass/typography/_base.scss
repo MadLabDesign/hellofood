@@ -6,4 +6,12 @@
     margin-bottom: $paragraph-margin-bottom;
     text-rendering: $paragraph-text-rendering;
   }
+
+  p.meta {
+    color: $text-color;
+    font-size: 12px;
+    line-height: $paragraph-lineheight;
+    text-rendering: $paragraph-text-rendering;
+    margin: 10px 0 0;
+  }
 }

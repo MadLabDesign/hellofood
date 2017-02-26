@@ -88,11 +88,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1em 0;
   height: 80px;
 
-
   -webkit-transition: all 0.8s ease;
   -moz-transition: all 0.8s ease;
   transition: all 0.8s ease;
-
 
   .logo {
     background-image: url("../img/logo-light.png");
@@ -117,7 +115,6 @@ h1, h2, h3, h4, h5, h6 {
   .menu > li {
     display: inline;
     padding-right: 30px;
-    }
   }
 }
 
@@ -169,8 +166,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
-
 .scroll-block {
   z-index: 9999999;
   width: 100%;
@@ -184,18 +179,18 @@ h1, h2, h3, h4, h5, h6 {
   background: url("../img/scroll-arrow.svg") no-repeat center;
 }
 
-
 nav.sub-nav {
   min-height: 60px;
   width: 100%;
   background-color: $primary-color;
-    ul.inline-list li{
-      padding: 10px;
-      line-height: 60px;
+  ul.inline-list li {
+    padding: 10px;
+    line-height: 60px;
 
-       a {
-     &include hover-underline (){};
-      }
+    a {
+      @include hover-underline ();
+    }
+  }
 }
 
 //Hero Banner
@@ -263,23 +258,18 @@ section#recipe-intro {
   }
 }
 
-
-
-
-
-
 //Footer
 
 footer {
   background-color: $white;
   width: 100%;
   display: block;
-  padding: 80px 0;
+  padding: 50px 0;
 
   .footer-logo {
     img {
       max-height: 30px;
     }
   }
-
 }
+

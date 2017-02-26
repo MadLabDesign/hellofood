@@ -5,6 +5,7 @@
 // 2. Global
 // 3. Base Typography
 // 4. Buttons
+// 5. Buttons
 
 
 @import '../util/modules';
@@ -29,6 +30,8 @@ $medium-gray: #cacaca !default;
 $dark-gray: #4A4A4A !default;
 $black: #0a0a0a !default;
 $white: #fefefe !default;
+$text-color: #999999 !default;
+
 $transparent-dark: rgba(30, 41, 59, 0.2);
 $transparent-light: rgba(255, 255, 255, 0.2);
 $body-background: $light-gray;
@@ -49,7 +52,7 @@ $print-transparent-backgrounds: true;
 // 3. Base Typography
 // ------------------
 
-$body-font-color: $primary-color !default;
+$body-font-color: $text-color !default;
 $body-font-family: 'source_sans_proregular', sans-serif !default;
 $body-font-family-italic: 'source_sans_proitalic', sans-serif !default;
 $body-antialiased: true;
@@ -108,3 +111,14 @@ $button-opacity-disabled: 0.25;
 $button-letter-spacing: 0.2rem;
 $button-font-weight: 500;
 
+// 5. Form
+// ------------------
+
+$form-spacing: 16px !default;
+$input-font-size: 16px;
+$input-border: 1px solid $medium-gray;
+$input-font-family: inherit;
+$input-color: $black;
+$input-background-disabled: $light-gray;
+$input-cursor-disabled: default;
+$input-font-size: 16px;

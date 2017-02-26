@@ -5,13 +5,13 @@
     padding: 0 5px;
   }
 
-  li.recipe-list-card {
+  .recipe-list-card {
     @include card();
     border: 1px solid $medium-gray;
   }
   .img-thumbnail {
-    background-color: red;
-    height: 70px;
+    background-color: $primary-color;
+    height: 80px;
     width: 100%;
   }
 

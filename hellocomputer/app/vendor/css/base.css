@@ -3076,12 +3076,32 @@
 
 #recipe-submit-dropdown {
   background-color: #fefefe; }
+  #recipe-submit-dropdown fieldset#upload {
+    background: #f7f9fa none repeat scroll 0 0;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 0 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0 2px rgba(0, 0, 0, 0.3);
+    font-size: 1em;
+    margin: 0 auto;
+    min-width: 100%;
+    padding: 20px;
+    position: relative;
+    height: 160px; }
+  #recipe-submit-dropdown fieldset#upload p {
+    color: #bbb;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 25px 0 0px;
+    text-align: center; }
+    #recipe-submit-dropdown fieldset#upload p .fa {
+      font-size: 20px; }
 
 .recipe-list {
   font-size: 14px; }
   .recipe-list [class*="col-"] {
     padding: 0 5px; }
-  .recipe-list li.recipe-list-card {
+  .recipe-list .recipe-list-card {
     overflow: hidden;
     border-radius: 4px;
     background-color: #fefefe;
@@ -3090,8 +3110,8 @@
     display: block;
     border: 1px solid #cacaca; }
   .recipe-list .img-thumbnail {
-    background-color: red;
-    height: 70px;
+    background-color: #1b2640;
+    height: 80px;
     width: 100%; }
 
 .recipe-list-header {
@@ -3502,7 +3522,7 @@ body {
   background-color: #f7f9fa;
   font-family: "source_sans_proregular", sans-serif;
   font-size: 100%;
-  color: #1b2640;
+  color: #999999;
   font-weight: 300;
   line-height: 1.45; }
 
@@ -3568,22 +3588,6 @@ h1, h2, h3, h4, h5, h6 {
   .header .menu > li {
     display: inline;
     padding-right: 30px; }
-    .header .menu > li a {
-      color: #fefefe;
-      position: relative; }
-      .header .menu > li a:before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background-color: #fefefe;
-        visibility: hidden;
-        -webkit-transform: scaleX(0);
-        transform: scaleX(0);
-        -webkit-transition: all 0.3s ease-in-out 0s;
-        transition: all 0.3s ease-in-out 0s; }
 
 .header-shrink {
   background-color: rgba(255, 255, 255, 0.2);
@@ -3637,6 +3641,22 @@ nav.sub-nav {
   nav.sub-nav ul.inline-list li {
     padding: 10px;
     line-height: 60px; }
+    nav.sub-nav ul.inline-list li a {
+      color: #fefefe;
+      position: relative; }
+      nav.sub-nav ul.inline-list li a:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #fefefe;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s; }
 
 #hero {
   background-color: #1b2640;
@@ -3685,7 +3705,7 @@ footer {
   background-color: #fefefe;
   width: 100%;
   display: block;
-  padding: 80px 0; }
+  padding: 50px 0; }
   footer .footer-logo img {
     max-height: 30px; }
 
@@ -3972,6 +3992,13 @@ p {
   margin-bottom: 1rem;
   text-rendering: optimizeLegibility; }
 
+p.meta {
+  color: #999999;
+  font-size: 12px;
+  line-height: 1.45;
+  text-rendering: optimizeLegibility;
+  margin: 10px 0 0; }
+
 .text-left {
   text-align: left; }
 
@@ -3983,6 +4010,107 @@ p {
 
 .text-justify {
   text-align: justify; }
+
+[type='file'],
+[type='checkbox'],
+[type='radio'] {
+  margin: 0; }
+
+[type='checkbox'] + label,
+[type='radio'] + label {
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  vertical-align: baseline; }
+  [type='checkbox'] + label[for],
+  [type='radio'] + label[for] {
+    cursor: pointer; }
+
+label > [type='checkbox'],
+label > [type='radio'] {
+  margin-right: 8px; }
+
+[type='file'] {
+  width: 100%; }
+
+input[type=checkbox].css-checkbox {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0; }
+
+input[type=checkbox].css-checkbox + label.css-label {
+  padding-left: 26px;
+  height: 21px;
+  display: inline-block;
+  line-height: 21px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  font-size: 10px;
+  vertical-align: middle;
+  cursor: pointer; }
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+  background-position: 0 -21px; }
+
+label.css-label {
+  background-image: url(http://csscheckbox.com/checkboxes/u/csscheckbox_f8d40671eec752c2a075981314745ffa.png);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+select {
+  height: 32px;
+  padding: 4px;
+  border: 1px solid #cacaca;
+  margin: 0;
+  font-size: 16px;
+  font-family: inherit;
+  line-height: normal;
+  color: #0a0a0a;
+  background-color: #fefefe;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%2874, 74, 74%29'></polygon></svg>");
+  background-size: 16px 11px;
+  background-position: right -16px center;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  padding-right: 24px; }
+  [data-whatinput='mouse'] select {
+    outline: 0; }
+  @media screen and (min-width: 0\0) {
+    select {
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg=="); } }
+  select:disabled {
+    background-color: #f7f9fa;
+    cursor: default; }
+  select::-ms-expand {
+    display: none; }
+  select[multiple] {
+    height: auto;
+    background-image: none; }
+
+select > option {
+  padding: 5px; }
+  [data-whatinput='mouse'] select > option {
+    outline: 0; }
+
+label {
+  padding-bottom: 10px;
+  display: block; }
 
 .button {
   display: inline-block;
