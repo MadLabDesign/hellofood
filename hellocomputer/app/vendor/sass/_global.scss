@@ -29,6 +29,9 @@ body {
   color: $body-font-color;
   font-weight: 300;
   line-height: $paragraph-lineheight;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
 }
 
 @media screen and (max-width: 640px) {

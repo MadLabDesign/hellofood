@@ -3524,7 +3524,9 @@ body {
   font-size: 100%;
   color: #999999;
   font-weight: 300;
-  line-height: 1.45; }
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 @media screen and (max-width: 640px) {
   body {

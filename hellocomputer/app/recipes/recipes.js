@@ -36,8 +36,8 @@ angular.module('myApp.recipes', ['ngRoute', 'valdr'])
         }];
 
         $scope.addRow = function () {
-
-            $scope.recipes.push({
+            if($scope.title !== '' && $scope.created !== '' && $scope.release !== ''){
+                 $scope.recipes.push({
                 'title': $scope.title,
                 'created': $scope.created,
                 'release': $scope.release,
@@ -53,6 +53,9 @@ angular.module('myApp.recipes', ['ngRoute', 'valdr'])
             $scope.type = '';
             $scope.difficulty = '';
             $scope.servings = '';
+            }
+
+
         };
 
 
