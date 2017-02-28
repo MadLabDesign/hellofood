@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html lang="en" data-ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>
-<html lang="en" data-ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html lang="en" data-ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html lang="en" data-ng-app="myApp" class="no-js"> <!--<![endif]-->
-
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,26 +21,31 @@
     <link href="vendor/css/base.css" rel="stylesheet">
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
+
+    <script src="bower_components/angular/angular.js"></script>
+    <!--<script src="bower_components/angular-route/angular-route.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="vendor/js/app.js"></script>
 </head>
-<body>
+<body ng-app="routerApp">
 
 
 <div class="header">
     <div class="container">
         <div class="row">
             <div class="col-xs-6 col-sm-4">
-                <a href="#!/intro">
+                <a ui-sref="intro">
                     <div class="logo"></div>
                 </a>
             </div>
             <div class="col-xs-6 col-sm-8">
                 <nav>
-                    <a href="#" class="close-panel"><i class="icon-remove-sign icon-large"></i></a>
+                    <a ui-sref="#" class="close-panel"><i class="icon-remove-sign icon-large"></i></a>
                     <ul class="menu">
-                        <li><a href="#!/intro" title="HellFood home page">Intro</a></li>
-                        <li><a href="#!/recipes" title="Latest Recipes">Recipes</a></li>
-                        <li><a href="#!/gallery" title="Gallery view">Gallery</a></li>
-                        <li><a href="#!/contact" title="Stay intouch">Contact</a></li>
+                        <li><a ui-sref="intro" title="HellFood home page">Intro</a></li>
+                        <li><a ui-sref="recipes" title="Latest Recipes">Recipes</a></li>
+                        <li><a ui-sref="gallery" title="Gallery view">Gallery</a></li>
+                        <li><a ui-sref="contact" title="Stay intouch">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -56,7 +53,7 @@
     </div>
 </div>
 
-<div ng-view></div>
+<div ui-view></div>
 
 <footer>
     <div class="container">
@@ -91,20 +88,16 @@
 <script src="vendor/js/vendor/animated-header/cbpAnimatedHeader.js"></script>
 
 
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-
-
-<script src="vendor/js/app.js"></script>
-<script src="intro/intro.js"></script>
-<script src="recipes/recipes.js"></script>
-<script src="gallery/gallery.js"></script>
-<script src="contact/contact.js"></script>
+<script src="views/intro/intro.js"></script>
+<script src="views/recipes/recipes.js"></script>
+<script src="views/gallery/gallery.js"></script>
+<script src="views/contact/contact.js"></script>
 <!--Form Validator-->
 <script src="bower_components/valdr/valdr.js"></script>
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
+
 
 
 

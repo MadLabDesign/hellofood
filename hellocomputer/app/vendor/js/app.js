@@ -1,21 +1,110 @@
 'use strict';
 
 
+var routerApp = angular.module('routerApp', ['ui.router']);
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'valdr',
-  'myApp.intro',
-  'myApp.recipes',
-  'myApp.gallery',
-  'myApp.contact',
-  'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+routerApp.config(function ($stateProvider, $urlRouterProvider) {
 
-  $routeProvider.otherwise({redirectTo: '/intro'});
-}]);
+    $urlRouterProvider.otherwise('/intro');
+
+    $stateProvider
+    // Intro page
+        .state('intro', {
+            url: '/intro',
+            templateUrl: 'intro.html',
+            controller: function ($scope) {
+                $scope.hero = " Pear Parfait with Bayleaf";
+
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
+                    //calculate destination place
+                    var dest = 0;
+                    if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
+                        dest = $(document).height() - $(window).height();
+                    } else {
+                        dest = $(this.hash).offset().top;
+                    }
+                    //go to destination
+                    $('html,body').animate({scrollTop: dest}, 1000, 'swing');
+                });
+            }
+        })
 
 
+
+        // Recipe page
+        .state('recipes', {
+            url: '/recipes',
+            templateUrl: 'recipes.html',
+            controller: function ($scope) {
+                $scope.hero = "Lets Start Cooking!";
+                $scope.pageTitle = "The Recipe | The Breakfast Club";
+
+                $scope.required = true;
+
+                $scope.title = "";
+                $scope.created = "";
+                $scope.release = "";
+                $scope.cooking = "";
+                $scope.type = "";
+                $scope.difficulty = "";
+                $scope.servings = "";
+
+
+                $scope.recipes = [{
+                    'title': '',
+                    'created': '',
+                    'release': '',
+                    'cooking': '',
+                    'type': '',
+                    'difficulty': '',
+                    'servings': ''
+                }];
+
+                $scope.addRow = function () {
+                    if ($scope.title !== '' && $scope.created !== '' && $scope.release !== '' && $scope.cooking !== '' && $scope.type !== '' && $scope.difficulty !== '' && $scope.servings !== '') {
+                        $scope.recipes.push({
+                            'title': $scope.title,
+                            'created': $scope.created,
+                            'release': $scope.release,
+                            'cooking': $scope.cooking,
+                            'type': $scope.type,
+                            'difficulty': $scope.difficulty,
+                            'servings': $scope.servings
+                        });
+                        $scope.title = '';
+                        $scope.created = '';
+                        $scope.release = '';
+                        $scope.cooking = '';
+                        $scope.type = '';
+                        $scope.difficulty = '';
+                        $scope.servings = '';
+                    }
+                };
+
+                $('#showRecipeInput').click(function() {
+                $('#recipe-submit-dropdown').toggle("slide");
+        });
+            }
+
+        })
+
+
+
+        // Gallery page
+        .state('gallery', {
+            url: '/gallery',
+            templateUrl: 'gallery.html',
+            controller: function ($scope) {}
+        })
+
+
+
+        // contact page
+        .state('contact', {
+            url: '/contact',
+            templateUrl: 'contact.html',
+            controller: function ($scope) {}
+        });
+
+});
