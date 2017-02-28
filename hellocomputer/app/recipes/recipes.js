@@ -12,9 +12,10 @@ angular.module('myApp.recipes', ['ngRoute', 'valdr'])
 
     .controller('RecipesCtrl', ['$scope', function ($scope) {
 
-
         $scope.hero = "Lets Start Cooking!";
         $scope.pageTitle = "The Recipe | The Breakfast Club";
+
+        $scope.required = true;
 
         $scope.title = "";
         $scope.created = "";
@@ -36,7 +37,7 @@ angular.module('myApp.recipes', ['ngRoute', 'valdr'])
         }];
 
         $scope.addRow = function () {
-            if($scope.title !== '' && $scope.created !== '' && $scope.release !== ''){
+            if($scope.title !== '' && $scope.created !== '' && $scope.release !== '' && $scope.cooking !== '' && $scope.type !== '' && $scope.difficulty !== '' && $scope.servings !== ''){
                  $scope.recipes.push({
                 'title': $scope.title,
                 'created': $scope.created,
@@ -54,11 +55,7 @@ angular.module('myApp.recipes', ['ngRoute', 'valdr'])
             $scope.difficulty = '';
             $scope.servings = '';
             }
-
-
         };
-
-
     }]);
 
 

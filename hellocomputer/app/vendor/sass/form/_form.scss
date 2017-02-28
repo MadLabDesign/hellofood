@@ -11,4 +11,9 @@
     display: block;
   }
 
+  input {
+     border: $input-border;
+    border-radius: $select-radius;
+    padding: ($form-spacing / 4);
+  }
 }

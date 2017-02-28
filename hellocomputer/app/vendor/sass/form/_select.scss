@@ -58,10 +58,11 @@ $select-radius: $global-radius !default;
 
 @mixin hellofood-form-select {
   select {
+     @include disable-mouse-outline;
     @include form-select;
   }
   select > option {
-     @include disable-mouse-outline;
+
     padding: $global-padding - 5;
   }
 }
