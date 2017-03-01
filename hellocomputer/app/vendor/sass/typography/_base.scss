@@ -5,6 +5,13 @@
     line-height: $paragraph-lineheight;
     margin-bottom: $paragraph-margin-bottom;
     text-rendering: $paragraph-text-rendering;
+
+    &.small {
+      font-size: $global-font-size - 20;
+    }
+    &.warning {
+      color: $alert-color;
+    }
   }
 
   p.meta {
@@ -14,4 +21,5 @@
     text-rendering: $paragraph-text-rendering;
     margin: 10px 0 0;
   }
+
 }

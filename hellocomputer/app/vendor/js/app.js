@@ -30,7 +30,7 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
-        // Recipe page
+        // Recipe pages
         .state('recipes', {
             url: '/recipes',
             views: {
@@ -43,13 +43,60 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
         })
 
         .state('recipes.breakfast', {
-            url:'^/breakfast',
+            url: '^/breakfast',
             templateUrl: 'views/recipes/breakfast.html',
+            controller: function ($scope) {
+                $scope.pageTitle = "The Recipe | The Breakfast Club";
+
+            }
         })
 
         .state('recipes.lunch', {
-            url:'^/lunch',
-           templateUrl: 'views/recipes/lunch.html'
+            url: '^/lunch',
+            templateUrl: 'views/recipes/lunch.html',
+             controller: function ($scope) {
+                $scope.pageTitle = "The Recipe | Lunch Time";
+            }
+        })
+
+        .state('recipes.main', {
+            url: '^/main',
+            templateUrl: 'views/recipes/main.html',
+             controller: function ($scope) {
+                 $scope.pageTitle = "The Recipe | The Main Course";
+             }
+        })
+
+        .state('recipes.salads', {
+            url: '^/salads',
+            templateUrl: 'views/recipes/salads.html',
+             controller: function ($scope) {
+                 $scope.pageTitle = "The Recipe | Amazing Salads";
+             }
+        })
+
+        .state('recipes.dessert', {
+            url: '^/dessert',
+            templateUrl: 'views/recipes/dessert.html',
+             controller: function ($scope) {
+                 $scope.pageTitle = "The Recipe | Mouth Watering Deserts";
+             }
+        })
+
+        .state('recipes.beverages', {
+            url: '^/beverages',
+            templateUrl: 'views/recipes/beverages.html',
+            controller: function ($scope) {
+                 $scope.pageTitle = "The Recipe | Getting the part started";
+             }
+        })
+
+        .state('recipes.entertaining', {
+            url: '^/entertaining',
+            templateUrl: 'views/recipes/entertaining.html',
+            controller: function ($scope) {
+                 $scope.pageTitle = "The Recipe | Keeping the Part going";
+             }
         })
 
 
@@ -59,6 +106,8 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
             url: '/gallery',
             templateUrl: 'gallery.html',
             controller: function ($scope) {
+                $scope.pageTitle = "The Recipe | The Breakfast Club";
+
             }
         })
 
@@ -76,7 +125,6 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
 
 
 routerApp.controller('recipeCtrl', function ($scope, $localStorage) {
-    $scope.hero = "Lets Start Cooking!";
     $scope.pageTitle = "The Recipe | The Breakfast Club";
 
     $scope.required = true;

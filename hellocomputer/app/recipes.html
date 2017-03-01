@@ -1,12 +1,4 @@
-<div id="intro-banner" style="background: url(vendor/img/hero-banners/home/intro-banner.png);">
-    <div class="container">
-        <div class="row">
-            <div class="text-area">
-                <h1>{{hero}}</h1>
-            </div>
-        </div>
-    </div>
-</div>
+<div id="intro-banner"></div>
 
 <nav class="sub-nav">
     <div class="container">
@@ -14,25 +6,18 @@
             <ul class="inline-list">
                 <li><a ui-sref="recipes.breakfast">Breakfast</a></li>
                 <li><a ui-sref="recipes.lunch">Lunch</a></li>
-                <li><a ui-sref="beverages">Beverages</a></li>
-                <li><a ui-sref="salads">Salads</a></li>
-                <li><a ui-sref="main">Main</a></li>
-                <li><a ui-sref="dessert">Dessert</a></li>
-                <li><a ui-sref="entertaining">Entertaining</a></li>
+                <li><a ui-sref="recipes.beverages">Beverages</a></li>
+                <li><a ui-sref="recipes.salads">Salads</a></li>
+                <li><a ui-sref="recipes.main">Main</a></li>
+                <li><a ui-sref="recipes.dessert">Dessert</a></li>
+                <li><a ui-sref="recipes.entertaining">Entertaining</a></li>
             </ul>
         </div>
         <div class="col-md-4">
-            <button class="button primary small hollow" id="showRecipeInput">submit your flavour</button>
+            <button class="button primary small" id="showRecipeInput">submit your flavour</button>
         </div>
     </div>
 </nav>
-
-
-
-
-<div ui-view></div>
-
-
 
 
 <section id="recipe-submit-dropdown" style="display: none">
@@ -147,14 +132,14 @@
                 </div>
             </form>
             <div class="col-md-12">
-                <p class="text-center small">*All fields are required to submit your Recipe</p>
+                <p class="text-center small warning">*All fields are required to submit your Recipe</p>
             </div>
         </div>
     </div>
 </section>
 
 
-
+<div ui-view></div>
 
 
 <div class="container">
@@ -171,51 +156,6 @@
 
     <section class="recipe-list">
         <ul class="small-block-grid-1 medium-block-grid-2">
-
-            <li>
-                <div class="recipe-list-card">
-                    <div class="col-md-2">
-                        <div class="img-thumbnail">ss</div>
-                    </div>
-                    <div class="col-md-10">
-                        <div class="recipe-list-header">
-                            <div class="col-md-10">
-                                <div class="title">
-                                    Breakfast Doughnuts
-                                </div>
-                                <div class="created">
-                                    Created by HelloFood
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="date">07 Aug 2017</div>
-                            </div>
-                        </div>
-
-                        <div class="recipe-list-main">
-                            <div class="col-md-12">
-                                <ul class="inline-list">
-                                    <li>
-                                        <span class="fa fa-clock-o" aria-hidden="true"></span>
-                                        <time>35 Minutes</time>
-                                    </li>
-                                    <li>
-                                        <span class="fa fa-star" aria-hidden="true"></span>
-                                        <span class="fa fa-star" aria-hidden="true"></span>
-                                        <span class="fa fa-star" aria-hidden="true"></span>
-                                        <difficulty>Not to Tricky</difficulty>
-                                    </li>
-                                    <li>
-                                        <span class="fa fa-cutlery" aria-hidden="true"></span>
-                                        <serving>4</serving>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
 
             <li class="recipe-list-input" ng-repeat="recipe in recipes">
                 <div class="recipe-list-card">
@@ -253,6 +193,51 @@
                                     <li>
                                         <span class="fa fa-cutlery" aria-hidden="true"></span>
                                         <serving>{{recipe.servings}}</serving>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="recipe-list-card">
+                    <div class="col-md-2">
+                        <div class="img-thumbnail">ss</div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="recipe-list-header">
+                            <div class="col-md-10">
+                                <div class="title">
+                                    Breakfast Doughnuts
+                                </div>
+                                <div class="created">
+                                    Created by HelloFood
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="date">07 Aug 2017</div>
+                            </div>
+                        </div>
+
+                        <div class="recipe-list-main">
+                            <div class="col-md-12">
+                                <ul class="inline-list">
+                                    <li>
+                                        <span class="fa fa-clock-o" aria-hidden="true"></span>
+                                        <time>35 Minutes</time>
+                                    </li>
+                                    <li>
+                                        <span class="fa fa-star" aria-hidden="true"></span>
+                                        <span class="fa fa-star" aria-hidden="true"></span>
+                                        <span class="fa fa-star" aria-hidden="true"></span>
+                                        <difficulty>Not to Tricky</difficulty>
+                                    </li>
+                                    <li>
+                                        <span class="fa fa-cutlery" aria-hidden="true"></span>
+                                        <serving>4</serving>
                                     </li>
 
                                 </ul>

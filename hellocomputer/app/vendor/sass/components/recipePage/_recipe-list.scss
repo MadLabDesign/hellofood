@@ -7,7 +7,7 @@
 
   .recipe-list-card {
     @include card();
-    border: 1px solid $medium-gray;
+    border: 1px solid $primary-color;
   }
   .img-thumbnail {
     background-color: $primary-color;
