@@ -16,9 +16,5 @@
     "gulp-sourcemaps": "^2.4.0",
     "gulp-watch": "^4.3.11"
   },
-  "dependencies": {
-    "angular-masonry": "^0.16.0",
-    "angulargrid": "^0.6.3",
-    "bricks.js": "^1.7.0"
-  }
+  "dependencies": {}
 }

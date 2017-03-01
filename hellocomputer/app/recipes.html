@@ -12,14 +12,13 @@
     <div class="container">
         <div class="col-md-8">
             <ul class="inline-list">
-                <li><a href="#!/breakfast">Breakfast</a></li>
-                <li><a href="#!/lunch">Lunch</a></li>
-                <li><a href="#!/beverages">Beverages</a></li>
-                <li><a href="#!/salads">Salads</a></li>
-                <li><a href="#!/main">Main</a></li>
-                <li><a href="#!/sidedish">Side Dish</a></li>
-                <li><a href="#!/dessert">Dessert</a></li>
-                <li><a href="#!/entertaining">Entertaining</a></li>
+                <li><a ui-sref="recipes.breakfast">Breakfast</a></li>
+                <li><a ui-sref="recipes.lunch">Lunch</a></li>
+                <li><a ui-sref="beverages">Beverages</a></li>
+                <li><a ui-sref="salads">Salads</a></li>
+                <li><a ui-sref="main">Main</a></li>
+                <li><a ui-sref="dessert">Dessert</a></li>
+                <li><a ui-sref="entertaining">Entertaining</a></li>
             </ul>
         </div>
         <div class="col-md-4">
@@ -29,8 +28,14 @@
 </nav>
 
 
-<section id="recipe-submit-dropdown" style="display: none">
 
+
+<div ui-view></div>
+
+
+
+
+<section id="recipe-submit-dropdown" style="display: none">
     <div class="container">
         <div class="row">
             <form role="form" name="recipeList" ng-submit="addRow($event)" novalidate>
@@ -147,6 +152,9 @@
         </div>
     </div>
 </section>
+
+
+
 
 
 <div class="container">

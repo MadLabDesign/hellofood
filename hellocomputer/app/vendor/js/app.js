@@ -1,7 +1,7 @@
 'use strict';
 
 
-var routerApp = angular.module('routerApp', ['ui.router']);
+var routerApp = angular.module('routerApp', ['ui.router', 'ngStorage']);
 
 routerApp.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -30,63 +30,26 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
-
-
         // Recipe page
         .state('recipes', {
             url: '/recipes',
-            templateUrl: 'recipes.html',
-            controller: function ($scope) {
-                $scope.hero = "Lets Start Cooking!";
-                $scope.pageTitle = "The Recipe | The Breakfast Club";
-
-                $scope.required = true;
-
-                $scope.title = "";
-                $scope.created = "";
-                $scope.release = "";
-                $scope.cooking = "";
-                $scope.type = "";
-                $scope.difficulty = "";
-                $scope.servings = "";
-
-
-                $scope.recipes = [{
-                    'title': '',
-                    'created': '',
-                    'release': '',
-                    'cooking': '',
-                    'type': '',
-                    'difficulty': '',
-                    'servings': ''
-                }];
-
-                $scope.addRow = function () {
-                    if ($scope.title !== '' && $scope.created !== '' && $scope.release !== '' && $scope.cooking !== '' && $scope.type !== '' && $scope.difficulty !== '' && $scope.servings !== '') {
-                        $scope.recipes.push({
-                            'title': $scope.title,
-                            'created': $scope.created,
-                            'release': $scope.release,
-                            'cooking': $scope.cooking,
-                            'type': $scope.type,
-                            'difficulty': $scope.difficulty,
-                            'servings': $scope.servings
-                        });
-                        $scope.title = '';
-                        $scope.created = '';
-                        $scope.release = '';
-                        $scope.cooking = '';
-                        $scope.type = '';
-                        $scope.difficulty = '';
-                        $scope.servings = '';
-                    }
-                };
-
-                $('#showRecipeInput').click(function() {
-                $('#recipe-submit-dropdown').toggle("slide");
-        });
+            views: {
+                '': {
+                    templateUrl: 'recipes.html',
+                    controller: 'recipeCtrl'
+                }
             }
 
+        })
+
+        .state('recipes.breakfast', {
+            url:'^/breakfast',
+            templateUrl: 'views/recipes/breakfast.html',
+        })
+
+        .state('recipes.lunch', {
+            url:'^/lunch',
+           templateUrl: 'views/recipes/lunch.html'
         })
 
 
@@ -95,7 +58,8 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('gallery', {
             url: '/gallery',
             templateUrl: 'gallery.html',
-            controller: function ($scope) {}
+            controller: function ($scope) {
+            }
         })
 
 
@@ -104,7 +68,60 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('contact', {
             url: '/contact',
             templateUrl: 'contact.html',
-            controller: function ($scope) {}
+            controller: function ($scope) {
+            }
         });
 
+});
+
+
+routerApp.controller('recipeCtrl', function ($scope, $localStorage) {
+    $scope.hero = "Lets Start Cooking!";
+    $scope.pageTitle = "The Recipe | The Breakfast Club";
+
+    $scope.required = true;
+
+    $scope.title = "";
+    $scope.created = "";
+    $scope.release = "";
+    $scope.cooking = "";
+    $scope.type = "";
+    $scope.difficulty = "";
+    $scope.servings = "";
+
+
+    $scope.recipes = [{
+        'title': '',
+        'created': '',
+        'release': '',
+        'cooking': '',
+        'type': '',
+        'difficulty': '',
+        'servings': ''
+    }];
+
+    $scope.addRow = function () {
+        if ($scope.title !== '' && $scope.created !== '' && $scope.release !== '' && $scope.cooking !== '' && $scope.type !== '' && $scope.difficulty !== '' && $scope.servings !== '') {
+            $scope.recipes.push({
+                'title': $scope.title,
+                'created': $scope.created,
+                'release': $scope.release,
+                'cooking': $scope.cooking,
+                'type': $scope.type,
+                'difficulty': $scope.difficulty,
+                'servings': $scope.servings
+            });
+            $scope.title = '';
+            $scope.created = '';
+            $scope.release = '';
+            $scope.cooking = '';
+            $scope.type = '';
+            $scope.difficulty = '';
+            $scope.servings = '';
+        }
+    };
+
+    $('#showRecipeInput').click(function () {
+        $('#recipe-submit-dropdown').toggle("slide");
+    });
 });
