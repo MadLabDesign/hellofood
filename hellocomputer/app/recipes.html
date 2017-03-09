@@ -138,18 +138,20 @@
     </div>
 </section>
 
-
-<div ui-view></div>
-
+<div class="container">
+    <div class="row">
+        <div ui-view></div>
+    </div>
+</div>
 
 <div class="container">
-    <section>
+    <section class="title-intro">
         <div class="row">
             <div class="col-md-9">
                 <h2>{{pageTitle}}</h2>
             </div>
             <div class="col-md-3">
-                <input type="search" placeholder="search">
+                <input type="search" placeholder="search" class="search-bar">
             </div>
         </div>
     </section>
@@ -202,10 +204,12 @@
                 </div>
             </li>
 
-            <li>
+            <!--<li>
                 <div class="recipe-list-card">
                     <div class="col-md-2">
-                        <div class="img-thumbnail">ss</div>
+                        <div class="thumbnail">
+                            <img src="dist/img/food-1.jpeg">
+                        </div>
                     </div>
                     <div class="col-md-10">
                         <div class="recipe-list-header">
@@ -245,7 +249,7 @@
                         </div>
                     </div>
                 </div>
-            </li>
+            </li>-->
         </ul>
     </section>
 </div>

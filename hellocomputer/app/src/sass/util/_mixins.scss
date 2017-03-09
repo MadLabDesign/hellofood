@@ -1,0 +1,329 @@
+//Content:
+
+// 1: disable-mouse-outline
+// 2: css-triangle
+// 3: border-radius
+// 4: box-shadow
+// 5: Vendor prefixer mixin
+// 6: Tooltip
+// 7: Gradient generator
+// 8: Responsive image
+
+
+
+
+
+
+
+
+// 1: disable-mouse-outline
+
+/// Removes the focus ring around an element when a mouse input is detected.
+@mixin disable-mouse-outline {
+  [data-whatinput='mouse'] & {
+    outline: 0;
+  }
+}
+
+
+// 2: css-triangle
+
+/// Creates a CSS triangle, which can be used for dropdown arrows, dropdown pips, and more. Use this mixin inside a `&::before` or `&::after` selector, to attach the triangle to an existing element.
+///
+/// @param {Number} $triangle-size - Width of the triangle.
+/// @param {Color} $triangle-color - Color of the triangle.
+/// @param {Keyword} $triangle-direction - Direction the triangle points. Can be `up`, `right`, `down`, or `left`.
+@mixin css-triangle(
+  $triangle-size,
+  $triangle-color,
+  $triangle-direction
+) {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset $triangle-size;
+
+  @if ($triangle-direction == down) {
+    border-color: $triangle-color transparent transparent;
+    border-top-style: solid;
+    border-bottom-width: 0;
+  }
+  @if ($triangle-direction == up) {
+    border-color: transparent transparent $triangle-color;
+    border-bottom-style: solid;
+    border-top-width: 0;
+  }
+  @if ($triangle-direction == right) {
+    border-color: transparent transparent transparent $triangle-color;
+    border-left-style: solid;
+    border-right-width: 0;
+  }
+  @if ($triangle-direction == left) {
+    border-color: transparent $triangle-color transparent transparent;
+    border-right-style: solid;
+    border-left-width: 0;
+  }
+}
+
+
+@mixin background-triangle($color: $black) {
+  $rgb: 'rgb%28#{red($color)}, #{green($color)}, #{blue($color)}%29';
+
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: #{$rgb}'></polygon></svg>");
+
+  @media screen and (min-width:0\0) {
+    @if lightness($color) < 60% {
+      // White triangle
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==');
+    }
+    @else {
+      // Black triangle
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMBJREFUeNrEllsOhCAMRVszC9IlzU7KCmVHTJsoMWYMUtpyv9BgbuXQB5ZSdgBYYY4ycgBivk8KYFsQMfMiTTBP4o3nUzCKzOabLJbLy2/g31evGkAginR4/ZegKH5qX3bJCscA3t0x3kgO5tQFyhhFf50xRqFLbyMUNJQzgyjGS/wgCpvKqkRBpuWrE4V9d+1E4dPUXqIg107SQOE/2DRQxMwTDygIInVDET9T3lCoj/6j/VCmGjZOl2lKpZ8AAwDQP7zIimDGFQAAAABJRU5ErkJggg==');
+    }
+  }
+}
+
+// 3: border-radius
+
+@mixin border-radius-bottom(){
+  border-bottom-left-radius: $global-radius;
+  border-bottom-right-radius: $global-radius;
+}
+@mixin border-radius-top($boder-radius: $global-radius){
+  border-top-left-radius: $boder-radius;
+  border-top-right-radius: $boder-radius;
+}
+
+// 4: box-shadow
+
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $left $top $blur $color;
+    -moz-box-shadow: inset $left $top $blur $color;
+    box-shadow: inset $left $top $blur $color;
+  } @else {
+    -webkit-box-shadow: $left $top $blur $color;
+    -moz-box-shadow: $left $top $blur $color;
+    box-shadow: $left $top $blur $color;
+  }
+}
+
+// 5: Vendor prefixer mixin
+
+@mixin vendor($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	#{$property}: $value;
+}
+
+// Generates border-color rules for all possible positions
+
+@mixin arrow-border-color($hintDefaultColor) {
+	@each $position in top, bottom, left, right {
+		@if $position == top or $position == bottom {
+			// Loop further for classes like .top-left, bottom-right etc
+			@each $xDir in left, right {
+				&.#{$hintPrefix}#{$position}-#{$xDir}:before {
+					border-#{$position}-color: $hintDefaultColor;
+				}
+			}
+		}
+		&.#{$hintPrefix}#{$position}:before {
+			border-#{$position}-color: $hintDefaultColor;
+		}
+	}
+}
+
+// mixin to set margin on tooltip using translate transform
+// $property
+@mixin set-margin($propertyY, $transitionDirection, $translateX: 0){
+  $value: unquote("#{$propertyY}(#{$hintTransitionDistance * $transitionDirection})");
+  &:before {
+    @include vendor('transform', $value);
+  }
+  &:after {
+    @if $translateX != 0 {
+      	// For vertical tooltips, we need to animate in y-direction
+		// retaining its x-transform.
+      @include vendor('transform', translateX($translateX) $value);
+    }
+    @else {
+      @include vendor('transform', $value);
+    }
+  }
+}
+
+
+// 6: Tooltip
+
+@mixin vertical-positioned-tooltip($propertyY, $transitionDirection, $xDirection:0) {
+  &:before {
+    margin-#{$propertyY}: -2 * $hintArrowBorderWidth + 1px;
+  }
+
+  &:before, &:after {
+    #{$propertyY}: 100%;
+    left: 50%; // get top-left corner in center
+  }
+
+  &:before {
+    left: calc(50% - #{$hintArrowBorderWidth}); //get arrow center aligned with content
+  }
+
+  $translateX: -50%;
+  @if $xDirection == -1 {
+    $translateX: -100%;
+  }
+  @elseif $xDirection == 1 {
+    $translateX: 0;
+  }
+
+  &:after {
+    @include vendor('transform', translateX($translateX));
+  }
+
+  &:after {
+    @if $xDirection != 0 {
+      // bring back the tooltip by some offset so that arrow doesn't stick at end
+      margin-left: -$xDirection * $hintArrowOffsetX;
+    }
+  }
+
+  &:hover {
+    @include set-margin('translateY', $transitionDirection, $translateX);
+  }
+}
+
+@mixin horizontal-positioned-tooltip($propertyX, $transitionDirection) {
+  &:before {
+    margin-#{$propertyX}: -2 * $hintArrowBorderWidth + 1px;
+  }
+  &:after {
+		margin-bottom: -1 * floor($hintTooltipHeight / 2);
+	}
+  &:before, &:after {
+		#{$propertyX}: 100%;
+		bottom: 50%;
+	}
+  &:hover {
+		@include set-margin('translateX', $transitionDirection);
+	}
+}
+
+
+
+// 7: Gradient generator
+
+@function is-direction($value) {
+  $is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+  @return $is-keyword or $is-angle;
+}
+
+
+@function legacy-direction($value) {
+  @if is-direction($value) == false {
+    @error "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be a direction.";
+  }
+
+  $conversion-map: (
+    to top          : bottom,
+    to top right    : bottom left,
+    to right top    : left bottom,
+    to right        : left,
+    to bottom right : top left,
+    to right bottom : left top,
+    to bottom       : top,
+    to bottom left  : top right,
+    to left bottom  : right top,
+    to left         : right,
+    to left top     : right bottom,
+    to top left     : bottom right
+  );
+
+  @if map-has-key($conversion-map, $value) {
+    @return map-get($conversion-map, $value);
+  }
+
+  @return 90deg - $value;
+}
+
+
+
+@mixin linear-gradient($direction, $color-stops...) {
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+  background: nth(nth($color-stops, 1), 1);
+  background: linear-gradient($direction, $color-stops);
+}
+
+
+// 8: Responsive image
+
+@mixin img-responsive($display: block) {
+  display: $display;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+
+// 9: position
+
+@mixin absolute-positioning($left: 0, $top: 0, $right: 0, $bottom: 0 ){
+   left: $left;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+  position: absolute;
+}
+
+// 10: Text-shadow
+
+@mixin text-shadow($angle:0px, $distance:1px, $blur:2px, $color:rgba(0, 0, 0, 0.5) ){
+  text-shadow:$angle $distance $blur $color;
+}
+
+
+//11: card-placeholder
+@mixin card(
+  $card-overflow: hidden,
+  $card-radius:$global-radius,
+  $card-bg:$white,
+  $card-padding: $global-padding,
+  $card-margin: 0
+){
+  overflow: $card-overflow;
+  border-radius: $card-radius;
+  background-color: $card-bg;
+  padding: $card-padding !important;
+  margin: $card-margin;
+  display: block;
+}
+
+
+//12: hover-underline
+
+@mixin hover-underline() {
+  color: $white;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $white;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+}

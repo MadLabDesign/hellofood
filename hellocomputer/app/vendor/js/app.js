@@ -87,7 +87,7 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
             url: '^/beverages',
             templateUrl: 'views/recipes/beverages.html',
             controller: function ($scope) {
-                 $scope.pageTitle = "The Recipe | Getting the part started";
+                 $scope.pageTitle = "The Recipe | Getting the party started";
              }
         })
 
@@ -125,7 +125,7 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
 
 
 routerApp.controller('recipeCtrl', function ($scope, $localStorage) {
-    $scope.pageTitle = "The Recipe | The Breakfast Club";
+    $scope.pageTitle = "The Recipe | Latest";
 
     $scope.required = true;
 
@@ -150,7 +150,8 @@ routerApp.controller('recipeCtrl', function ($scope, $localStorage) {
 
     $scope.addRow = function () {
         if ($scope.title !== '' && $scope.created !== '' && $scope.release !== '' && $scope.cooking !== '' && $scope.type !== '' && $scope.difficulty !== '' && $scope.servings !== '') {
-            $scope.recipes.push({
+
+            $scope.addLatestRecipeRow ({
                 'title': $scope.title,
                 'created': $scope.created,
                 'release': $scope.release,
@@ -172,4 +173,48 @@ routerApp.controller('recipeCtrl', function ($scope, $localStorage) {
     $('#showRecipeInput').click(function () {
         $('#recipe-submit-dropdown').toggle("slide");
     });
+
+
+    $scope.addLatestRecipeRow = function (recipe) {
+        $scope.recipes.push(recipe);
+    };
+
+    $scope.addLatestRecipeRow (
+        JSON.parse(localStorage.getItem('recipeData'))
+    )
 });
+
+
+
+
+/*
+localStorage.setItem("recipeData", JSON.stringify(
+    {
+            title: 'Breakfast Doughnuts',
+            created: 'Breakfast Doughnuts',
+            release: 'Breakfast Doughnuts',
+            cooking: 'Breakfast Doughnuts',
+            type: 'Breakfast Doughnuts',
+            difficulty: 'Breakfast Doughnuts',
+            servings: 'Breakfast Doughnuts'
+        }
+));
+*/
+
+
+
+
+/*
+ *
+  * {
+  *     title:'Breakfast Doughnuts',
+  *     created:'Breakfast Doughnuts',
+  *     release:'Breakfast Doughnuts',
+  *     cooking:'Breakfast Doughnuts',
+  *     type:'Breakfast Doughnuts',
+  *     difficulty:'Breakfast Doughnuts',
+  *     servings:'Breakfast Doughnuts'
+  *
+  * }
+
+  * */
