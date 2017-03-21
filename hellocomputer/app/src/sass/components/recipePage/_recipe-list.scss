@@ -31,6 +31,12 @@
 
 }
 
+
+//.recipe-list ul li {
+//  &:first-child {
+//    display: none;
+//  }
+//}
 .recipe-list-header {
 
   width: 100%;
@@ -52,7 +58,9 @@
   }
 }
 
-.recipe-list-main {
+
+
+.recipe-details {
   font-size: 12px;
   border-top: 1px solid $secondary-color;
   display: inline-block;

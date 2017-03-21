@@ -6,44 +6,49 @@
     <section>
         <div class="row">
             <div class="col-md-12">
-                 <h2>{{pageTitle}}</h2>
+                <h2>{{pageTitle}}</h2>
             </div>
         </div>
     </section>
 
-    <section>
+    <section class="contact-form">
         <div class="row">
-            <form role="form" >
-                <div class="form-group">
-                    <label class="col-md-2 control-label">Username</label>
+            <div class="col-md-6">
+                <form class="form-label form-js-label">
+                   <fieldset>
+                       <input id="firstName" name="firstName" type="text" autocomplete="off" required />
+                       <label for="firstName">First Name <span>*</span></label>
+                   </fieldset>
 
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" name="name"
-                               ng-model="name"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-2 control-label">email</label>
+                    <fieldset>
+                       <input id="lastName" name="lastName" type="text" autocomplete="off" required />
+                       <label for="lastName">Last Name <span>*</span></label>
+                   </fieldset>
 
-                    <div class="col-md-4">
-                        <input type="email" class="form-control" name="email"
-                               ng-model="email"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-2 control-label">Contact Number</label>
+                    <fieldset>
+                       <input id="userPhone" name="userPhone" type="tel" autocomplete="off" required />
+                       <label for="userPhone">Contact Number <span>*</span></label>
+                   </fieldset>
 
-                    <div class="col-md-4">
-                        <input type="tel" class="form-control" name="contact"
-                               ng-model="contact"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div style="padding-left:110px">
-                        <input type="submit" value="Submit" class="button primary"/>
-                    </div>
-                </div>
-            </form>
+                    <fieldset>
+                       <input id="userEmail" name="userEmail" type="email" autocomplete="off" required />
+                       <label for="userEmail">Email Address <span>*</span></label>
+                   </fieldset>
+
+                    <fieldset>
+                        <input id="description" name="description" type="text" autocomplete="off">
+                        <label for="description">Message</label>
+                    </fieldset>
+                </form>
+            </div>
         </div>
     </section>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('.form-js-label').find('input').on('input', function(e) {
+            $(e.currentTarget).attr('data-empty', !e.currentTarget.value);
+        });
+    });
+</script>

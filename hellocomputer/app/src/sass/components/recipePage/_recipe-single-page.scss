@@ -1,0 +1,102 @@
+#recipe-single {
+  width: 100%;
+  position: relative;
+  clear: both;
+  background-color: $white;
+}
+
+#recipe-single .col-sm-ls-5, #recipe-single .col-sm-ls-7 {
+  float: left;
+  min-height: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  position: relative;
+}
+
+#recipe-single .recipe-header-left {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#recipe-single {
+  font-family: $body-font-family;
+  font-size: $global-font-size;
+  color: $primary-color;
+  .h1, h1 {
+    font-family: $body-font-family;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 36px;
+    margin-bottom: 6px;
+    margin-top: -5px;
+    text-align: left;
+  }
+
+  .recipe-header-left {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center;
+  }
+  .recipe-intro, .recipe-details {
+    border-top: 1px solid $secondary-color;
+    font-family: $body-font-family;
+    font-size: $global-font-size;
+    line-height: 26px;
+    padding: 15px 0;
+  }
+
+  .nutrition-wrapper {
+    border-top: 1px solid $secondary-color;
+  }
+
+  .nutrition-wrapper p {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $primary-color;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+#recipe-single .nutrition-wrapper .nutrition-list li .nutrition-item {
+  border: 1px solid $secondary-color;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+
+  .nutrition-item-desc {
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 5px;
+  }
+  .nutrition-item-top {
+    border-bottom: 1px solid #c5b9a0;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 5px 0;
+  }
+
+  .nutrition-item-bottom {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 5px 0;
+  }
+}
+
+
+#recipe-single .recipe-ingredients .ingred-list {
+  font-size: $global-font-size;
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+
+#recipe-single .recipe-ingredients .ingred-list li {
+  line-height: 32px;
+  margin: 0 0 10px;
+}
+
+#recipe-single .recipe-instructions ol.recipeSteps {
+  padding-left: 15px;
+}

@@ -124,7 +124,7 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
 });
 
 
-routerApp.controller('recipeCtrl', function ($scope, $localStorage) {
+routerApp.controller('recipeCtrl', function ($scope) {
     $scope.pageTitle = "The Recipe | Latest";
 
     $scope.required = true;
@@ -191,13 +191,23 @@ routerApp.controller('recipeCtrl', function ($scope, $localStorage) {
 localStorage.setItem("recipeData", JSON.stringify(
     {
             title: 'Breakfast Doughnuts',
-            created: 'Breakfast Doughnuts',
-            release: 'Breakfast Doughnuts',
-            cooking: 'Breakfast Doughnuts',
-            type: 'Breakfast Doughnuts',
-            difficulty: 'Breakfast Doughnuts',
-            servings: 'Breakfast Doughnuts'
+            created: 'Tatum',
+            release: '7 Aug 2017',
+            cooking: '30 min',
+            type: 'Breakfast',
+            difficulty: 'Not to tricky',
+            servings: '4'
+        },
+         {
+            title: 'Breakfast Doughnuts',
+            created: 'blaine',
+            release: '7 Aug 2017',
+            cooking: '30 min',
+            type: 'Breakfast',
+            difficulty: 'Not to tricky',
+            servings: '4'
         }
+
 ));
 */
 

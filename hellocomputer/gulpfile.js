@@ -1,9 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var imagemin = require('gulp-imagemin');
-
-
-
+const autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('styles', function() {
    gulp.src('app/src/sass/**/*.scss')
@@ -12,15 +9,7 @@ gulp.task('styles', function() {
 });
 
 
-gulp.task('images', function() {
-   gulp.src('app/src/img/*')
-       .pipe(imagemin())
-       .pipe(gulp.dest('./app/dist/img'))
-});
-
-
 //Watch task
 gulp.task('default', function() {
   gulp.watch('app/src/sass/**/*.scss',['styles']);
-  gulp.watch('app/src/img/*',['images']);
 });
