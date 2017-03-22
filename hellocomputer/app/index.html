@@ -28,59 +28,72 @@
 
     <script src="vendor/js/app.js"></script>
 </head>
-<body ng-app="routerApp">
+<body ng-app="routerApp" id="home">
 
 
-<div class="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-6 col-sm-4">
-                <a ui-sref="intro">
-                    <div class="logo"></div>
-                </a>
-            </div>
-            <div class="col-xs-6 col-sm-8">
-                <nav>
-                    <a ui-sref="#" class="close-panel"><i class="icon-remove-sign icon-large"></i></a>
-                    <ul class="menu">
-                        <li><a ui-sref="intro" title="HellFood home page">Intro</a></li>
-                        <li><a ui-sref="recipes" title="Latest Recipes">Recipes</a></li>
-                        <li><a ui-sref="gallery" title="Gallery view">Gallery</a></li>
-                        <li><a ui-sref="contact" title="Stay intouch">Contact</a></li>
-                    </ul>
-                </nav>
+<div class="site-container">
+    <div class="site-pusher">
+        <header class="header">
+
+            <a ui-sref="intro">
+                <div class="header__logo"></div>
+            </a>
+
+            <ul class="menu">
+                <li><a ui-sref="intro" title="HellFood home page">Intro</a></li>
+                <li><a ui-sref="recipes" title="Latest Recipes">Recipes</a></li>
+                <li><a ui-sref="gallery" title="Gallery view">Gallery</a></li>
+                <li><a ui-sref="contact" title="Stay intouch">Contact</a></li>
+            </ul>
+
+            <a href="#" class="header__icon" id="header__icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </header>
+
+        <div class="site-content">
+            <div class="wrapper">
+
+                    <div ui-view></div>
+
+
+                <footer>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="#!/intro" class="footer-logo" title="Hellofood"> <img
+                                        src="dist/img/logo-dark.png"></a>
+                            </div>
+                            <div class="col-md-9 text-right">
+                                <div class="social-media">
+                                    <ul class="inline-list">
+                                        <li>+27 21 555 5555</li>
+                                        <li><a href="mailto:info@hellocomputer.com">info@hellocomputer.com</a></li>
+                                        <li><a href="#" title="" target="_blank"><i class="fa fa-facebook"
+                                                                                    aria-hidden="true"></i></a>
+                                        </li>
+                                        <li><a href="#" title="" target="_blank"><i class="fa fa-twitter"
+                                                                                    aria-hidden="true"></i></a>
+                                        </li>
+                                        <li><a href="#" title="" target="_blank"><i class="fa fa-instagram"
+                                                                                    aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
     </div>
 </div>
 
-<div class="wrapper">
-    <div ui-view></div>
-</div>
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <a href="#!/intro" class="footer-logo" title="Hellofood"> <img src="dist/img/logo-dark.png"></a>
-            </div>
-            <div class="col-md-9 text-right">
-                <div class="social-media">
-                    <ul class="inline-list">
-                        <li>+27 21 555 5555</li>
-                        <li><a href="mailto:info@hellocomputer.com">info@hellocomputer.com</a></li>
-                        <li><a href="#" title="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        </li>
-                        <li><a href="#" title="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        </li>
-                        <li><a href="#" title="" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
 
 
 <!--Scripts-->
@@ -93,7 +106,23 @@
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        (function ($) {
+            $('#header__icon').click(function (e) {
+                e.preventDefault();
+                $('body').toggleClass('with--sidebar');
+            });
+            $('#site-cache').click(function (e) {
+                $('body').removeClass('with--sidebar');
+            });
+            $('.header__icon').click(function(){
+                $(this).toggleClass('open');
+            });
 
+        })(jQuery);
+    });
+</script>
 
 
 </body>

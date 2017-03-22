@@ -106,7 +106,7 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
             url: '/gallery',
             templateUrl: 'gallery.html',
             controller: function ($scope) {
-                $scope.pageTitle = "The Recipe | The Breakfast Club";
+                $scope.pageTitle = "The Gallery";
 
             }
         })
@@ -118,6 +118,7 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
             url: '/contact',
             templateUrl: 'contact.html',
             controller: function ($scope) {
+                 $scope.pageTitle = "Contact Us";
             }
         });
 

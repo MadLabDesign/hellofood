@@ -3,42 +3,52 @@
 </div>
 
 <div class="container">
-    <section>
-        <div class="row">
-            <div class="col-md-12">
-                <h2>{{pageTitle}}</h2>
-            </div>
-        </div>
-    </section>
-
     <section class="contact-form">
         <div class="row">
             <div class="col-md-6">
+                <h2>{{pageTitle}}</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia elementum neque, finibus congue
+                    arcu. Mauris maximus tellus eu suscipit pellentesque. Integer tincidunt scelerisque magna id
+                    efficitur. Aliquam faucibus, leo non molestie semper, erat dui scelerisque risus, sed viverra massa
+                    felis non lacus.</p>
+                <ul class="inline-list">
+                    <li><a href="#" title="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="#" title="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="#" title="" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
                 <form class="form-label form-js-label">
-                   <fieldset>
-                       <input id="firstName" name="firstName" type="text" autocomplete="off" required />
-                       <label for="firstName">First Name <span>*</span></label>
-                   </fieldset>
+                    <fieldset>
+                        <input id="firstName" name="firstName" type="text" autocomplete="off" required/>
+                        <label for="firstName">First Name <span>*</span></label>
+                    </fieldset>
 
                     <fieldset>
-                       <input id="lastName" name="lastName" type="text" autocomplete="off" required />
-                       <label for="lastName">Last Name <span>*</span></label>
-                   </fieldset>
+                        <input id="lastName" name="lastName" type="text" autocomplete="off" required/>
+                        <label for="lastName">Last Name <span>*</span></label>
+                    </fieldset>
 
                     <fieldset>
-                       <input id="userPhone" name="userPhone" type="tel" autocomplete="off" required />
-                       <label for="userPhone">Contact Number <span>*</span></label>
-                   </fieldset>
+                        <input id="userPhone" name="userPhone" type="tel" autocomplete="off" required/>
+                        <label for="userPhone">Contact Number <span>*</span></label>
+                    </fieldset>
 
                     <fieldset>
-                       <input id="userEmail" name="userEmail" type="email" autocomplete="off" required />
-                       <label for="userEmail">Email Address <span>*</span></label>
-                   </fieldset>
+                        <input id="userEmail" name="userEmail" type="email" autocomplete="off" required/>
+                        <label for="userEmail">Email Address <span>*</span></label>
+                    </fieldset>
 
                     <fieldset>
                         <input id="description" name="description" type="text" autocomplete="off">
                         <label for="description">Message</label>
                     </fieldset>
+
+                    <button type="submit" class="button primary">Send</button>
                 </form>
             </div>
         </div>
@@ -46,8 +56,8 @@
 </div>
 
 <script>
-    $(document).ready(function(){
-        $('.form-js-label').find('input').on('input', function(e) {
+    $(document).ready(function () {
+        $('.form-js-label').find('input').on('input', function (e) {
             $(e.currentTarget).attr('data-empty', !e.currentTarget.value);
         });
     });
