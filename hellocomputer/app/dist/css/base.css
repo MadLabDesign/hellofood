@@ -3880,6 +3880,25 @@ h1, h2, h3, h4, h5, h6 {
   color: #c5b75b;
   letter-spacing: 0.09rem; }
 
+.header-shrink {
+  background-color: #fefefe;
+  height: 50px;
+  padding: 0.5em 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .header-shrink .logo {
+    background-image: url("../img/logo-dark.png");
+    background-size: 140px auto;
+    width: 150px;
+    height: 40px; }
+  .header-shrink ul.menu {
+    margin: 5px 0; }
+  .header-shrink .menu > li a {
+    color: #1b2640; }
+    .header-shrink .menu > li a:before {
+      background-color: #1b2640; }
+
 .scroll-block {
   background: transparent url("../img/scroll-arrow.png") no-repeat scroll center center/130px auto;
   bottom: 60px;

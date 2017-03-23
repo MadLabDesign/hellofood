@@ -122,35 +122,35 @@ h1, h2, h3, h4, h5, h6 {
 //  }
 //}
 //
-//.header-shrink {
-//  background-color: $white;
-//  height: 50px;
-//  padding: 0.5em 0;
-//  -webkit-transition: all 0.3s ease;
-//  -moz-transition: all 0.3s ease;
-//  transition: all 0.3s ease;
-//  .logo {
-//    background-image: url("../img/logo-dark.png");
-//
-//    background-size: 140px auto;
-//    width: 150px;
-//    height: 40px;
-//
-//  }
-//
-//  ul.menu {
-//    margin: 5px 0;
-//  }
-//
-//  .menu > li {
-//    a {
-//      color: $primary-color;
-//      &:before {
-//        background-color: $primary-color;
-//      }
-//    }
-//  }
-//}
+.header-shrink {
+  background-color: $white;
+  height: 50px;
+  padding: 0.5em 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  .logo {
+    background-image: url("../img/logo-dark.png");
+
+    background-size: 140px auto;
+    width: 150px;
+    height: 40px;
+
+  }
+
+  ul.menu {
+    margin: 5px 0;
+  }
+
+  .menu > li {
+    a {
+      color: $primary-color;
+      &:before {
+        background-color: $primary-color;
+      }
+    }
+  }
+}
 //
 //.header ul.menu > li a:hover:before {
 //  visibility: visible;

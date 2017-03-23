@@ -7,7 +7,8 @@ var cbpAnimatedHeader = (function() {
 
 	function init() {
 		window.addEventListener( 'scroll', function( event ) {
-			if( !didScroll ) {
+
+			if( !didScroll && window.location.hash === '#!/intro') {
 				didScroll = true;
 				setTimeout( scrollPage, 550 );
 			}
@@ -15,6 +16,7 @@ var cbpAnimatedHeader = (function() {
 	}
 
 	function scrollPage() {
+
 		var sy = scrollY();
 		if ( sy >= changeHeaderOn ) {
 			classie.add( header, 'header-shrink' );

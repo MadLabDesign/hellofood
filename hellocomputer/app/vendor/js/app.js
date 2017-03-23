@@ -15,7 +15,6 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
             controller: function ($scope) {
                 $scope.hero = " Pear Parfait with Bayleaf";
 
-
                 $(".scroll").click(function (event) {
                     event.preventDefault();
                     //calculate destination place
