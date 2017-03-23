@@ -1,23 +1,30 @@
 <!--<div id="intro-banner"></div>-->
 
-<nav class="sub-nav">
+<div class="sub-nav">
     <div class="container">
-        <div class="col-md-8">
-            <ul class="inline-list">
-                <li><a ui-sref="recipes.breakfast">Breakfast</a></li>
-                <li><a ui-sref="recipes.lunch">Lunch</a></li>
-                <li><a ui-sref="recipes.beverages">Beverages</a></li>
-                <li><a ui-sref="recipes.salads">Salads</a></li>
-                <li><a ui-sref="recipes.main">Main</a></li>
-                <li><a ui-sref="recipes.dessert">Dessert</a></li>
-                <li><a ui-sref="recipes.entertaining">Entertaining</a></li>
-            </ul>
-        </div>
-        <div class="col-md-4">
-            <button class="button primary small" id="showRecipeInput">submit your flavour</button>
+        <div class="row">
+            <nav class="scroll-nav">
+                <div class="col-md-8">
+                    <ul class="inline-list">
+                        <li><a ui-sref="recipes.breakfast">Breakfast</a></li>
+                        <li><a ui-sref="recipes.lunch">Lunch</a></li>
+                        <li><a ui-sref="recipes.beverages">Beverages</a></li>
+                        <li><a ui-sref="recipes.salads">Salads</a></li>
+                        <li><a ui-sref="recipes.main">Main</a></li>
+                        <li><a ui-sref="recipes.dessert">Dessert</a></li>
+                        <li><a ui-sref="recipes.entertaining">Entertaining</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <button class="button primary small" id="showRecipeInput">submit your flavour</button>
+                </div>
+            </nav>
         </div>
     </div>
-</nav>
+</div>
+
+
+
 
 
 <section id="recipe-submit-dropdown" style="display: none">
@@ -222,18 +229,17 @@
             </div>
         </div>
     </div>
-
 </section>
 
 
 <div id="recipe-single">
     <div class="container">
         <div class="row row-eq-height">
-            <div class="col-lg-5 col-md-5 col-sm-6 col-sm-ls-7 recipe-header-left"
+            <div class="col-lg-5 col-md-5 col-sm-6 col-sm-ls-7 col-xs-12 recipe-header-left"
                  style="background: url(dist/img/recipe-decs-img.png);">
 
             </div>
-            <div class="col-lg-7 col-md-7 col-sm-6 col-sm-ls-5 single-recipe-details">
+            <div class="col-lg-7 col-md-7 col-sm-6 col-sm-ls-5 col-xs-12 single-recipe-details">
                 <h1 class="hidden-xs" style="transition: transform 1s ease 0s;">Roast carrot and avocado salad with
                     orange and lemon dressing</h1>
 
@@ -270,7 +276,7 @@
                         <div class="nutrition-wrapper">
                             <p>Nutrition per serving</p>
 
-                            <ul class="small-block-grid-3 medium-block-grid-8 nutrition-list">
+                            <ul class="small-block-grid-3 medium-block-grid-4 large-block-grid-8 nutrition-list">
                                 <li>
                                     <div class="nutrition-item">
                                         <div class="nutrition-item-desc"> Calories</div>

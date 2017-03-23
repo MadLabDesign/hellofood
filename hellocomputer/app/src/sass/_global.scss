@@ -190,11 +190,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-nav.sub-nav {
+.sub-nav {
+  margin-top: 80px;
   border-top: 1px solid $light-gray;
   height: 50px;
   width: 100%;
   background-color: $white;
+  overflow: hidden;
+
+
   ul.inline-list li {
     padding: 10px;
     line-height: 45px;
@@ -211,6 +215,18 @@ nav.sub-nav {
     float: right;
   }
 }
+@media only screen and (max-width: 768px) {
+  .sub-nav {
+  margin-top: 0;
+}
+}
+
+
+
+
+
+
+
 
 //Hero Banner
 #hero {
@@ -231,7 +247,7 @@ nav.sub-nav {
       margin-bottom: 1rem;
       line-height: 1;
       color: $white;
-      font-size: 80px;
+      font-size: 500%;
     }
 
     a.btn {

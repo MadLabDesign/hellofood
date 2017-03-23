@@ -28,39 +28,41 @@
 
     <script src="vendor/js/app.js"></script>
 </head>
-<body ng-app="routerApp" id="home">
+<body ng-app="routerApp">
 
 
 <div class="site-container">
     <div class="site-pusher">
         <header class="header">
+            <div class=" container">
+                <a ui-sref="intro">
+                    <div class="header__logo"></div>
+                </a>
 
-            <a ui-sref="intro">
-                <div class="header__logo"></div>
-            </a>
+                <ul class="menu">
+                    <li><a ui-sref="intro" title="HellFood home page">Intro</a></li>
+                    <li><a ui-sref="recipes" title="Latest Recipes">Recipes</a></li>
+                    <li><a ui-sref="gallery" title="Gallery view">Gallery</a></li>
+                    <li><a ui-sref="contact" title="Stay intouch">Contact</a></li>
+                </ul>
 
-            <ul class="menu">
-                <li><a ui-sref="intro" title="HellFood home page">Intro</a></li>
-                <li><a ui-sref="recipes" title="Latest Recipes">Recipes</a></li>
-                <li><a ui-sref="gallery" title="Gallery view">Gallery</a></li>
-                <li><a ui-sref="contact" title="Stay intouch">Contact</a></li>
-            </ul>
-
-            <a href="#" class="header__icon" id="header__icon">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
+                <a href="#" class="header__icon" id="header__icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
         </header>
 
         <div class="site-content">
             <div class="wrapper">
 
-                    <div ui-view></div>
-
+                <div ui-view>
+                    you shouldn't see this
+                </div>
 
                 <footer>
                     <div class="container">
@@ -95,7 +97,6 @@
 </div>
 
 
-
 <!--Scripts-->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 
@@ -113,13 +114,13 @@
                 e.preventDefault();
                 $('body').toggleClass('with--sidebar');
             });
-            $('#site-cache').click(function (e) {
+            $('#site-cache,.menu li a').click(function (e) {
                 $('body').removeClass('with--sidebar');
+                $('.header__icon').removeClass('open');
             });
-            $('.header__icon').click(function(){
+            $('.header__icon').click(function () {
                 $(this).toggleClass('open');
             });
-
         })(jQuery);
     });
 </script>
