@@ -19,6 +19,7 @@
     "gulp-watch": "^4.3.11"
   },
   "dependencies": {
+    "angular-location-decorator": "^1.0.1",
     "gulp": "^3.3.4"
   }
 }

@@ -11,23 +11,13 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
     // Intro page
         .state('intro', {
             url: '/intro',
-            templateUrl: 'intro.html',
-            controller: function ($scope) {
-                $scope.hero = " Pear Parfait with Bayleaf";
-
-                $(".scroll").click(function (event) {
-                    event.preventDefault();
-                    //calculate destination place
-                    var dest = 0;
-                    if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
-                        dest = $(document).height() - $(window).height();
-                    } else {
-                        dest = $(this.hash).offset().top;
-                    }
-                    //go to destination
-                    $('html,body').animate({scrollTop: dest}, 1000, 'swing');
-                });
+            views: {
+                '': {
+                    templateUrl: 'intro.html',
+                    controller: 'introCtrl'
+                }
             }
+
         })
 
         // Recipe pages
@@ -54,7 +44,7 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('recipes.lunch', {
             url: '^/lunch',
             templateUrl: 'views/recipes/lunch.html',
-             controller: function ($scope) {
+            controller: function ($scope) {
                 $scope.pageTitle = "The Recipe | Lunch Time";
             }
         })
@@ -62,41 +52,41 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('recipes.main', {
             url: '^/main',
             templateUrl: 'views/recipes/main.html',
-             controller: function ($scope) {
-                 $scope.pageTitle = "The Recipe | The Main Course";
-             }
+            controller: function ($scope) {
+                $scope.pageTitle = "The Recipe | The Main Course";
+            }
         })
 
         .state('recipes.salads', {
             url: '^/salads',
             templateUrl: 'views/recipes/salads.html',
-             controller: function ($scope) {
-                 $scope.pageTitle = "The Recipe | Amazing Salads";
-             }
+            controller: function ($scope) {
+                $scope.pageTitle = "The Recipe | Amazing Salads";
+            }
         })
 
         .state('recipes.dessert', {
             url: '^/dessert',
             templateUrl: 'views/recipes/dessert.html',
-             controller: function ($scope) {
-                 $scope.pageTitle = "The Recipe | Mouth Watering Deserts";
-             }
+            controller: function ($scope) {
+                $scope.pageTitle = "The Recipe | Mouth Watering Deserts";
+            }
         })
 
         .state('recipes.beverages', {
             url: '^/beverages',
             templateUrl: 'views/recipes/beverages.html',
             controller: function ($scope) {
-                 $scope.pageTitle = "The Recipe | Getting the party started";
-             }
+                $scope.pageTitle = "The Recipe | Getting the party started";
+            }
         })
 
         .state('recipes.entertaining', {
             url: '^/entertaining',
             templateUrl: 'views/recipes/entertaining.html',
             controller: function ($scope) {
-                 $scope.pageTitle = "The Recipe | Keeping the Part going";
-             }
+                $scope.pageTitle = "The Recipe | Keeping the Part going";
+            }
         })
 
 
@@ -118,13 +108,33 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
             url: '/contact',
             templateUrl: 'contact.html',
             controller: function ($scope) {
-                 $scope.pageTitle = "Contact Us";
+                $scope.pageTitle = "Contact Us";
             }
         });
 
 });
 
+//Intro Controller
+routerApp.controller('introCtrl', function ($scope) {
+    $scope.hero = " Pear Parfait with Bayleaf";
 
+    $(".scroll").click(function (event) {
+        event.preventDefault();
+        //calculate destination place
+        var dest = 0;
+        if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
+            dest = $(document).height() - $(window).height();
+        } else {
+            dest = $(this.hash).offset().top;
+        }
+        //go to destination
+        $('html,body').animate({scrollTop: dest}, 1000, 'swing');
+    });
+
+});
+
+
+//Recipe Controller
 routerApp.controller('recipeCtrl', function ($scope) {
     $scope.pageTitle = "The Recipe | Latest";
 
@@ -176,6 +186,7 @@ routerApp.controller('recipeCtrl', function ($scope) {
     });
 
 
+
     $scope.addLatestRecipeRow = function (recipe) {
         $scope.recipes.push(recipe);
     };
@@ -185,48 +196,44 @@ routerApp.controller('recipeCtrl', function ($scope) {
     )
 });
 
-
-
-
-
 /*
-localStorage.setItem("recipeData", JSON.stringify(
-    {
-            title: 'Breakfast Doughnuts',
-            created: 'Tatum',
-            release: '7 Aug 2017',
-            cooking: '30 min',
-            type: 'Breakfast',
-            difficulty: 'Not to tricky',
-            servings: '4'
-        },
-         {
-            title: 'Breakfast Doughnuts',
-            created: 'blaine',
-            release: '7 Aug 2017',
-            cooking: '30 min',
-            type: 'Breakfast',
-            difficulty: 'Not to tricky',
-            servings: '4'
-        }
+ localStorage.setItem("recipeData", JSON.stringify(
+ {
+ title: 'Breakfast Doughnuts',
+ created: 'Tatum',
+ release: '7 Aug 2017',
+ cooking: '30 min',
+ type: 'Breakfast',
+ difficulty: 'Not to tricky',
+ servings: '4'
+ },
+ {
+ title: 'Breakfast Doughnuts',
+ created: 'blaine',
+ release: '7 Aug 2017',
+ cooking: '30 min',
+ type: 'Breakfast',
+ difficulty: 'Not to tricky',
+ servings: '4'
+ }
 
-));
-*/
+ ));
+ */
 
 
 
 
 /*
  *
-  * {
-  *     title:'Breakfast Doughnuts',
-  *     created:'Breakfast Doughnuts',
-  *     release:'Breakfast Doughnuts',
-  *     cooking:'Breakfast Doughnuts',
-  *     type:'Breakfast Doughnuts',
-  *     difficulty:'Breakfast Doughnuts',
-  *     servings:'Breakfast Doughnuts'
-  *
-  * }
+ * {
+ *     title:'Breakfast Doughnuts',
+ *     created:'Breakfast Doughnuts',
+ *     release:'Breakfast Doughnuts',
+ *     cooking:'Breakfast Doughnuts',
+ *     type:'Breakfast Doughnuts',
+ *     difficulty:'Breakfast Doughnuts',
+ *     servings:'Breakfast Doughnuts'
+ *
+ * }
 
-  * */
+ * */
