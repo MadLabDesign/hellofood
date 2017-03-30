@@ -1,14 +1,15 @@
 'use strict';
 
 
-var routerApp = angular.module('routerApp', ['ui.router', 'ngStorage']);
+var app = angular.module('routerApp', ['ui.router']);
 
-routerApp.config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/intro');
 
     $stateProvider
     // Intro page
+
         .state('intro', {
             url: '/intro',
             views: {
@@ -30,6 +31,18 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
                 }
             }
 
+        })
+
+        .state('recipes.latest', {
+            url: '^/latest',
+             templateUrl: 'views/recipes/latest.html',
+            controller: function ($scope) {
+                $scope.pageTitle = "The Recipe | The Breakfast Club";
+                 $('#showRecipeInput').click(function () {
+            $('#recipe-submit-dropdown').toggle("slide");
+        });
+
+            }
         })
 
         .state('recipes.breakfast', {
@@ -90,15 +103,26 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
         })
 
 
-
-        // Gallery page
-        .state('gallery', {
-            url: '/gallery',
-            templateUrl: 'gallery.html',
+         // Single Recipe Template View
+        .state('single-recipe', {
+            url: '/single-recipe',
+            templateUrl: 'single-recipe.html',
             controller: function ($scope) {
                 $scope.pageTitle = "The Gallery";
 
             }
+        })
+
+        // Gallery page
+        .state('gallery', {
+            url: '/gallery',
+             views: {
+                '': {
+                     templateUrl: 'gallery.html',
+                    controller: 'galleryCtrl'
+                }
+            }
+
         })
 
 
@@ -115,8 +139,9 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
 });
 
 //Intro Controller
-routerApp.controller('introCtrl', function ($scope) {
-    $scope.hero = " Pear Parfait with Bayleaf";
+app.controller('introCtrl', function ($scope) {
+
+
 
     $(".scroll").click(function (event) {
         event.preventDefault();
@@ -131,11 +156,25 @@ routerApp.controller('introCtrl', function ($scope) {
         $('html,body').animate({scrollTop: dest}, 1000, 'swing');
     });
 
+    //Gallery
+    function getRandomSize(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+    }
+
+    for (var i = 0; i < 25; i++) {
+        var width = getRandomSize(200, 400);
+        var height = getRandomSize(200, 400);
+        $('#photos').append('<a href="#"> <img src="//www.lorempixel.com/' + width + '/' + height + '/cats" alt="pretty kitty" class="img-respnsive"></a>');
+    }
+
+
+
+ $scope.hero = "Pear Parfait with Bayleaf";
 });
 
 
 //Recipe Controller
-routerApp.controller('recipeCtrl', function ($scope) {
+app.controller('recipeCtrl', function ($scope) {
     $scope.pageTitle = "The Recipe | Latest";
 
     $scope.required = true;
@@ -193,8 +232,28 @@ routerApp.controller('recipeCtrl', function ($scope) {
 
     $scope.addLatestRecipeRow (
         JSON.parse(localStorage.getItem('recipeData'))
-    )
+    );
 });
+
+
+app.controller('galleryCtrl', function ($scope) {
+    $scope.pageTitle = "Gallery";
+
+       //Gallery
+    function getRandomSize(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+    }
+
+    for (var i = 0; i < 25; i++) {
+        var width = getRandomSize(200, 400);
+        var height = getRandomSize(200, 400);
+        $('#photos').append('<a href="#"> <img src="//www.lorempixel.com/' + width + '/' + height + '/cats" alt="pretty kitty" class="img-respnsive"></a>z');
+    }
+
+
+});
+
+
 
 /*
  localStorage.setItem("recipeData", JSON.stringify(
@@ -237,3 +296,4 @@ routerApp.controller('recipeCtrl', function ($scope) {
  * }
 
  * */
+

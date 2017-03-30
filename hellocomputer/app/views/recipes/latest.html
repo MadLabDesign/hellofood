@@ -13,7 +13,7 @@
     <section class="recipe-list">
         <ul class="small-block-grid-1 medium-block-grid-2">
             <li class="recipe-list-input" ng-repeat="recipe in recipes" ng-show="recipe">
-                <a href="#">
+                <a ui-sref="single-recipe">
                     <div class="recipe-list-card">
                         <div class="col-md-2">
                             <div class="thumbnail">
@@ -63,3 +63,11 @@
         </ul>
     </section>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#showRecipeInput').click(function () {
+            $('#recipe-submit-dropdown').toggle("slide");
+        });
+    });
+</script>

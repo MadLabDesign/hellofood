@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>HelloFoods</title>
-
+<script>
+    </script>
     <!--START Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="dist/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="dist/favicons/favicon-32x32.png" sizes="32x32">
@@ -28,7 +29,7 @@
 
     <script src="vendor/js/app.js"></script>
 </head>
-<body>
+<body id="main">
 
 
 <div class="site-container">
@@ -123,7 +124,15 @@
             });
         })(jQuery);
     });
-    alert(location);
+
+
+        $(document).ready(function () {
+        $('#showRecipeInput').click(function () {
+            $('#recipe-submit-dropdown').toggle("slide");
+        });
+    });
+
+
 </script>
 
 
