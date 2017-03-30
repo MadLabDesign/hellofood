@@ -20,12 +20,14 @@
     <meta name="description" content="Hello Food, angular recipe app">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="dist/css/base.css" rel="stylesheet">
-    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link href="bower_components/justifiedGallery/dist/css/justifiedGallery.css" rel="stylesheet">
+
 
     <!--Angular Js Components-->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+    <script src="bower_components/modernizr/"></script>
 
     <script src="vendor/js/app.js"></script>
 </head>
@@ -101,41 +103,18 @@
 <!--Scripts-->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 
+<script src="bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.js"></script>
+
 <script src="vendor/js/vendor/animated-header/classie.js"></script>
 <script src="vendor/js/vendor/animated-header/cbpAnimatedHeader.js"></script>
+
 
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        (function ($) {
-            $('#header__icon').click(function (e) {
-                e.preventDefault();
-                $('body').toggleClass('with--sidebar');
-            });
-            $('#site-cache,.menu li a').click(function (e) {
-                $('body').removeClass('with--sidebar');
-                $('.header__icon').removeClass('open');
-            });
-            $('.header__icon').click(function () {
-                $(this).toggleClass('open');
-            });
-        })(jQuery);
-    });
 
-
-        $(document).ready(function () {
-        $('#showRecipeInput').click(function () {
-            $('#recipe-submit-dropdown').toggle("slide");
-        });
-    });
-
-
-</script>
-
-
+<script src="vendor/js/script.js"></script>
 
 </body>
 </html>
