@@ -77,51 +77,6 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: $letter-spacing;
 }
 
-//
-//
-////Top Nav
-//
-//.header {
-//  background-color: $white;
-//  position: fixed;
-//  display: block;
-//  top: 0;
-//  left: 0;
-//  width: 100%;
-//  z-index: 10000;
-//  padding: 1em 0;
-//  height: 80px;
-//
-//  -webkit-transition: all 0.3s ease;
-//  -moz-transition: all 0.3s ease;
-//  transition: all 0.3s ease;
-//
-//  .logo {
-//    background-image: url("../img/logo-dark.png");
-//    background-repeat: no-repeat;
-//    background-size: 200px 40px;
-//    width: 200px;
-//    display: block;
-//    height: 40px;
-//    -webkit-transition: all 0.3s ease;
-//    -moz-transition: all 0.3s ease;
-//    transition: all 0.3s ease;
-//
-//  }
-//
-//  ul.menu {
-//    padding-top: 0px;
-//    list-style: none;
-//    margin-bottom: 2em;
-//    float: right;
-//  }
-//
-//  .menu > li {
-//    display: inline;
-//    padding-right: 30px;
-//  }
-//}
-//
 .header-shrink {
   background-color: $white;
   height: 50px;
@@ -129,11 +84,11 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  .logo {
+  .header__logo {
     background-image: url("../img/logo-dark.png");
 
     background-size: 140px auto;
-    width: 150px;
+    width: 140px;
     height: 40px;
 
   }
@@ -151,25 +106,6 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
-//
-//.header ul.menu > li a:hover:before {
-//  visibility: visible;
-//  -webkit-transform: scaleX(1);
-//  transform: scaleX(1);
-//}
-//
-//@media screen and (max-width: 55em) {
-//  .header, .header-shrink {
-//    height: 50px;
-//    padding: 0.7em 0;
-//
-//    .logo {
-//      background-size: 140px auto;
-//      width: 150px;
-//      height: 40px;
-//    }
-//  }
-//}
 
 .scroll-block {
   background: rgba(0, 0, 0, 0) url("../img/scroll-arrow.png") no-repeat scroll center center / 130px auto;
@@ -181,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   text-align: center;
   width: 100%;
-  z-index: 1111;
+
 
 
   .fa-angle-down {
@@ -215,16 +151,15 @@ h1, h2, h3, h4, h5, h6 {
     float: right;
   }
 }
+
+
+
+
 @media only screen and (max-width: 768px) {
   .sub-nav {
   margin-top: 0;
 }
 }
-
-
-
-
-
 
 
 

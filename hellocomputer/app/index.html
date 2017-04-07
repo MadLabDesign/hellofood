@@ -20,14 +20,13 @@
     <meta name="description" content="Hello Food, angular recipe app">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="dist/css/base.css" rel="stylesheet">
-    <link href="bower_components/justifiedGallery/dist/css/justifiedGallery.css" rel="stylesheet">
 
 
     <!--Angular Js Components-->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/ngstorage/ngStorage.min.js"></script>
-    <script src="bower_components/modernizr/"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
     <script src="vendor/js/app.js"></script>
 </head>
@@ -63,8 +62,8 @@
         <div class="site-content">
             <div class="wrapper">
 
-                <div ui-view>
-                    you shouldn't see this
+                <div ui-view autoscroll="true">
+
                 </div>
 
                 <footer>
@@ -101,10 +100,11 @@
 
 
 <!--Scripts-->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-
+<!--<script src="bower_components/jquery/dist/jquery.min.js"></script>-->
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<!--mosaic Gallery-->
 <script src="bower_components/justifiedGallery/dist/js/jquery.justifiedGallery.js"></script>
-
+<!--Animated Header-->
 <script src="vendor/js/vendor/animated-header/classie.js"></script>
 <script src="vendor/js/vendor/animated-header/cbpAnimatedHeader.js"></script>
 
@@ -115,6 +115,7 @@
 
 
 <script src="vendor/js/script.js"></script>
+
 
 </body>
 </html>

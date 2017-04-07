@@ -26,14 +26,16 @@ $pesticide-debug-depth: false;
 @import "fragments/header";
 @import "fragments/angular-csp";
 @import "fragments/button";
-@import "fragments/image-masonry";
+@import "fragments/gallery-mosonry";
+@import "fragments/preloader";
+
+
 
 
 
 //Components
 //Single sections used throughout the framework
 @import "components/recipePage/modules";
-@import "components/gallery/gallery-mosonry";
 
 
 //global Styles
@@ -50,7 +52,8 @@ $pesticide-debug-depth: false;
 @include hellofood-forms;
 @include hello-angular;
 @include hello-button;
-@include hello-masonry;
+@include hello-gallery-mosonry;
+
 
 
 

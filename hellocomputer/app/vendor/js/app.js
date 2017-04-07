@@ -173,9 +173,6 @@ app.controller('introCtrl', function ($scope) {
         }
     });
 
-
-
-
  $scope.hero = "Pear Parfait with Bayleaf";
 });
 
@@ -250,7 +247,6 @@ app.controller('galleryCtrl', function ($scope) {
         rowNum: 3,
         rowHeight: 160,
         lastRow: 'nojustify',
-        randomize: true,
         margins: 3,
         cssAnimation: true,
         sizeRangeSuffixes: {
