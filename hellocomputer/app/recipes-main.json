@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Mediterranean 'chicken ’n’ chips'",
+    "created": "Clare Knivett ",
+    "release": "1 Jan 2017",
+    "cooking": "1 Hour",
+    "type": "Main",
+    "difficulty": "Not to tricky",
+    "servings": "4"
+  },
+  {
+    "title": "Sesame butterflied chicken",
+    "created": "Jamie Oliver",
+    "release": "7 Aug 2017",
+    "cooking": "18 min",
+    "type": "Maint",
+    "difficulty": "Not to tricky",
+    "servings": "2"
+  },
+  {
+    "title": "Chicken satay",
+    "created": "John Smith",
+    "release": "23 Mar 2017",
+    "cooking": "40 min",
+    "type": "Breakfast",
+    "difficulty": "Not to tricky",
+    "servings": "4"
+  },
+  {
+    "title": "Baked chicken & porcini risotto",
+    "created": "Donna Hay",
+    "release": "8 Sep 2017",
+    "cooking": "1 Hour",
+    "type": "Main",
+    "difficulty": "Not to tricky",
+    "servings": "4"
+  }
+]

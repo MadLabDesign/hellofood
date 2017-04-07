@@ -1,0 +1,53 @@
+<section class="recipe-list">
+        <ul class="small-block-grid-1 medium-block-grid-2">
+            <li class="recipe-list-input" ng-repeat="recipe in recipes" ng-show="recipe">
+                <a ui-sref="single-recipe">
+                    <div class="recipe-list-card">
+                        <div class="col-md-2">
+                            <div class="thumbnail">
+                                <!--<img src="dist/img/food-1.jpeg">-->
+                                <img src="{{recipe.image}}">
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="recipe-list-header">
+                                <div class="col-md-10">
+                                    <div class="title">
+                                        {{recipe.title}}
+                                    </div>
+                                    <div class="created">
+                                        Created by {{recipe.created}}
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="date">{{recipe.release}}</div>
+                                </div>
+                            </div>
+
+                            <div class="recipe-details recipe-list-main">
+                                <div class="col-md-12">
+                                    <ul class="inline-list">
+                                        <li>
+                                            <span class="fa fa-clock-o" aria-hidden="true"></span>
+                                            <time>{{recipe.cooking}}</time>
+                                        </li>
+                                        <li>
+                                            <span class="fa fa-star" aria-hidden="true"></span>
+                                            <span class="fa fa-star" aria-hidden="true"></span>
+                                            <span class="fa fa-star" aria-hidden="true"></span>
+                                            <difficulty>{{recipe.difficulty}}</difficulty>
+                                        </li>
+                                        <li>
+                                            <span class="fa fa-cutlery" aria-hidden="true"></span>
+                                            <serving>{{recipe.servings}}</serving>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </section>

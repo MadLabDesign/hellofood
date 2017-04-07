@@ -1,7 +1,7 @@
 'use strict';
 
 
-var app = angular.module('routerApp', ['ui.router']);
+var app = angular.module('routerApp', ['ui.router', 'angular-loading-bar']);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -24,23 +24,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // Recipe pages
         .state('recipes', {
             url: '/recipes',
-            views: {
-                '': {
-                    templateUrl: 'recipes.html',
-                    controller: 'recipeCtrl'
-                }
-            }
-
+            templateUrl: 'recipes.html',
+            controller: 'recipeCtrl',
         })
 
         .state('recipes.latest', {
             url: '^/latest',
-             templateUrl: 'views/recipes/latest.html',
+            templateUrl: 'views/recipes/latest.html',
             controller: function ($scope) {
-                $scope.pageTitle = "The Recipe | The Breakfast Club";
-                 $('#showRecipeInput').click(function () {
-            $('#recipe-submit-dropdown').toggle("slide");
-        });
+                $scope.pageTitle = "The Recipes | Our Latest";
+                $('#showRecipeInput').click(function () {
+                    $('#recipe-submit-dropdown').addClass('open');
+                });
 
             }
         })
@@ -48,8 +43,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('recipes.breakfast', {
             url: '^/breakfast',
             templateUrl: 'views/recipes/breakfast.html',
-            controller: function ($scope) {
+            controller: function ($scope, $http) {
                 $scope.pageTitle = "The Recipe | The Breakfast Club";
+                $http.get('recipes-breakfast.json')
+                    .then(function (res) {
+                        $scope.recipes = res.data;
+                    });
+                $('#showRecipeInput').click(function () {
+                    $('#recipe-submit-dropdown').toggle("slide");
+                });
+
 
             }
         })
@@ -57,53 +60,95 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('recipes.lunch', {
             url: '^/lunch',
             templateUrl: 'views/recipes/lunch.html',
-            controller: function ($scope) {
+            controller: function ($scope, $http) {
                 $scope.pageTitle = "The Recipe | Lunch Time";
+                $http.get('recipes-lunch.json')
+                    .then(function (res) {
+                        $scope.recipes = res.data;
+                    });
+                $('#showRecipeInput').click(function () {
+                    $('#recipe-submit-dropdown').toggle("slide");
+                });
             }
         })
 
         .state('recipes.main', {
             url: '^/main',
             templateUrl: 'views/recipes/main.html',
-            controller: function ($scope) {
+            controller: function ($scope, $http) {
                 $scope.pageTitle = "The Recipe | The Main Course";
+                $http.get('recipes-main.json')
+                    .then(function (res) {
+                        $scope.recipes = res.data;
+                    });
+                $('#showRecipeInput').click(function () {
+                    $('#recipe-submit-dropdown').toggle("slide");
+                });
             }
         })
 
         .state('recipes.salads', {
             url: '^/salads',
             templateUrl: 'views/recipes/salads.html',
-            controller: function ($scope) {
+            controller: function ($scope, $http) {
                 $scope.pageTitle = "The Recipe | Amazing Salads";
+                $http.get('recipes-salads.json')
+                    .then(function (res) {
+                        $scope.recipes = res.data;
+                    });
+                $('#showRecipeInput').click(function () {
+                    $('#recipe-submit-dropdown').toggle("slide");
+                });
             }
         })
 
         .state('recipes.dessert', {
             url: '^/dessert',
             templateUrl: 'views/recipes/dessert.html',
-            controller: function ($scope) {
+            controller: function ($scope, $http) {
                 $scope.pageTitle = "The Recipe | Mouth Watering Deserts";
+                $http.get('recipes-dessert.json')
+                    .then(function (res) {
+                        $scope.recipes = res.data;
+                    });
+                $('#showRecipeInput').click(function () {
+                    $('#recipe-submit-dropdown').toggle("slide");
+                });
             }
         })
 
         .state('recipes.beverages', {
             url: '^/beverages',
             templateUrl: 'views/recipes/beverages.html',
-            controller: function ($scope) {
+            controller: function ($scope, $http) {
                 $scope.pageTitle = "The Recipe | Getting the party started";
+                $http.get('recipes-beverages.json')
+                    .then(function (res) {
+                        $scope.recipes = res.data;
+                    });
+                $('#showRecipeInput').click(function () {
+                    $('#recipe-submit-dropdown').toggle("slide");
+                });
             }
         })
 
         .state('recipes.entertaining', {
             url: '^/entertaining',
             templateUrl: 'views/recipes/entertaining.html',
-            controller: function ($scope) {
+            controller: function ($scope, $http) {
                 $scope.pageTitle = "The Recipe | Keeping the Part going";
+                $http.get('recipes-entertaining.json')
+                    .then(function (res) {
+                        $scope.recipes = res.data;
+                    });
+                $('#showRecipeInput').click(function () {
+                    $('#recipe-submit-dropdown').toggle("slide");
+                });
             }
         })
 
 
-         // Single Recipe Template View
+        // Single Recipe Template View
         .state('single-recipe', {
             url: '/single-recipe',
             templateUrl: 'single-recipe.html',
@@ -116,9 +161,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // Gallery page
         .state('gallery', {
             url: '/gallery',
-             views: {
+            views: {
                 '': {
-                     templateUrl: 'gallery.html',
+                    templateUrl: 'gallery.html',
                     controller: 'galleryCtrl'
                 }
             }
@@ -140,7 +185,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 //Intro Controller
 app.controller('introCtrl', function ($scope) {
-
 
 
     $(".scroll").click(function (event) {
@@ -173,12 +217,13 @@ app.controller('introCtrl', function ($scope) {
         }
     });
 
- $scope.hero = "Pear Parfait with Bayleaf";
+    $scope.hero = "Pear Parfait with Bayleaf";
 });
 
 
 //Recipe Controller
-app.controller('recipeCtrl', function ($scope) {
+app.controller('recipeCtrl', function ($scope, $state, $http) {
+    $state.transitionTo('recipes.latest');
     $scope.pageTitle = "The Recipe | Latest";
 
     $scope.required = true;
@@ -224,10 +269,14 @@ app.controller('recipeCtrl', function ($scope) {
         }
     };
 
+
+    $http.get('recipes.json')
+        .then(function (res) {
+            $scope.recipes = res.data;
+        });
     $('#showRecipeInput').click(function () {
         $('#recipe-submit-dropdown').toggle("slide");
     });
-
 
 
     $scope.addLatestRecipeRow = function (recipe) {
@@ -280,7 +329,6 @@ app.controller('galleryCtrl', function ($scope) {
 
 
 });
-
 
 
 /*
