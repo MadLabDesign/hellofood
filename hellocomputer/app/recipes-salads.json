@@ -1,37 +1,41 @@
 [
   {
-    "title": "Oat, pear & cardamom smoothie",
+    "image": "http://cdn.jamieoliver.com/recipe-database/xtra_med/2fxUzFcqqg08LPCqyo_-2H.jpg",
+    "title": "Harvest salad",
     "created": "Simon Bajada",
     "release": "1 Jan 2017",
     "cooking": "15 min",
-    "type": "Breakfast",
+    "type": "Salad",
     "difficulty": "Not to tricky",
     "servings": "2"
   },
   {
-    "title": "Breakfast Doughnuts",
+    "image": "http://cdn.jamieoliver.com/recipe-database/oldImages/xtra_med/1460_1_1436891540.jpg",
+    "title": "Superfood salad",
     "created": "Jamie Oliver",
     "release": "7 Aug 2017",
     "cooking": "30 min",
-    "type": "Breakfast",
+    "type": "Salad",
     "difficulty": "Not to tricky",
     "servings": "4"
   },
   {
-    "title": "Pineapple pancake mess",
+    "image": "http://cdn.jamieoliver.com/recipe-database/oldImages/xtra_med/1456_30_1436962921.jpg",
+    "title": "Waldorf salad",
     "created": "John Smith",
     "release": "23 Mar 2017",
     "cooking": "35 min",
-    "type": "Breakfast",
+    "type": "Salad",
     "difficulty": "Not to tricky",
     "servings": "4"
   },
   {
-    "title": "Roasted stone fruit",
+    "image": "http://cdn.jamieoliver.com/recipe-database/xtra_med/APCAAduHaNaBC3zLiKa9yh.jpg",
+    "title": "Watermelon & feta salad",
     "created": "Sabrina Issebell",
     "release": "8 Sep 2017",
     "cooking": "55 min",
-    "type": "Breakfast",
+    "type": "Salad",
     "difficulty": "Not to tricky",
     "servings": "4"
   }

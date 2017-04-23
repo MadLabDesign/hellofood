@@ -3459,7 +3459,10 @@ ul.menu {
     background-color: #1b2640;
     height: 80px;
     width: 100%;
-    overflow: hidden; }
+    overflow: hidden;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important; }
     .recipe-list .thumbnail img {
       position: absolute;
       left: 50%;
@@ -3956,6 +3959,21 @@ fieldset {
   [data-whatinput='mouse'] :-moz-focusring:not(input):not(button):not(select):not(textarea):not(iframe):not(frame):not(body):not(html) {
     outline: 0; }
 
+.object-fit_fill {
+  object-fit: fill; }
+
+.object-fit_contain {
+  object-fit: contain; }
+
+.object-fit_cover {
+  object-fit: cover; }
+
+.object-fit_none {
+  object-fit: none; }
+
+.object-fit_scale-down {
+  object-fit: scale-down; }
+
 body {
   width: 100%;
   min-height: 100%;
@@ -4065,6 +4083,9 @@ h1, h2, h3, h4, h5, h6 {
       transform: scaleX(0);
       -webkit-transition: all 0.3s ease-in-out 0s;
       transition: all 0.3s ease-in-out 0s; }
+
+.header-shrink .sub-nav {
+  margin-top: 50px; }
 
 @media only screen and (max-width: 768px) {
   .sub-nav {

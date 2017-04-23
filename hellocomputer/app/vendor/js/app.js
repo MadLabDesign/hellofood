@@ -24,18 +24,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // Recipe pages
         .state('recipes', {
             url: '/recipes',
-            templateUrl: 'recipes.html',
-            controller: 'recipeCtrl',
+            views: {
+                '': {
+                    templateUrl: 'recipes.html',
+                    controller: 'recipeCtrl'
+                }
+            }
+
         })
 
         .state('recipes.latest', {
             url: '^/latest',
             templateUrl: 'views/recipes/latest.html',
-            controller: function ($scope) {
+            controller: function ($scope, $http) {
                 $scope.pageTitle = "The Recipes | Our Latest";
-                $('#showRecipeInput').click(function () {
-                    $('#recipe-submit-dropdown').addClass('open');
-                });
+                $http.get('recipes.json')
+                    .then(function (res) {
+                        $scope.recipes = res.data;
+                    });
 
             }
         })
@@ -49,11 +55,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     .then(function (res) {
                         $scope.recipes = res.data;
                     });
-                $('#showRecipeInput').click(function () {
-                    $('#recipe-submit-dropdown').toggle("slide");
-                });
-
-
             }
         })
 
@@ -66,9 +67,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     .then(function (res) {
                         $scope.recipes = res.data;
                     });
-                $('#showRecipeInput').click(function () {
-                    $('#recipe-submit-dropdown').toggle("slide");
-                });
             }
         })
 
@@ -81,9 +79,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     .then(function (res) {
                         $scope.recipes = res.data;
                     });
-                $('#showRecipeInput').click(function () {
-                    $('#recipe-submit-dropdown').toggle("slide");
-                });
             }
         })
 
@@ -96,9 +91,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     .then(function (res) {
                         $scope.recipes = res.data;
                     });
-                $('#showRecipeInput').click(function () {
-                    $('#recipe-submit-dropdown').toggle("slide");
-                });
             }
         })
 
@@ -111,9 +103,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     .then(function (res) {
                         $scope.recipes = res.data;
                     });
-                $('#showRecipeInput').click(function () {
-                    $('#recipe-submit-dropdown').toggle("slide");
-                });
             }
         })
 
@@ -126,9 +115,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     .then(function (res) {
                         $scope.recipes = res.data;
                     });
-                $('#showRecipeInput').click(function () {
-                    $('#recipe-submit-dropdown').toggle("slide");
-                });
             }
         })
 
@@ -141,9 +127,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     .then(function (res) {
                         $scope.recipes = res.data;
                     });
-                $('#showRecipeInput').click(function () {
-                    $('#recipe-submit-dropdown').toggle("slide");
-                });
             }
         })
 
@@ -222,12 +205,13 @@ app.controller('introCtrl', function ($scope) {
 
 
 //Recipe Controller
-app.controller('recipeCtrl', function ($scope, $state, $http) {
+app.controller('recipeCtrl', function ($scope, $state) {
     $state.transitionTo('recipes.latest');
     $scope.pageTitle = "The Recipe | Latest";
 
     $scope.required = true;
 
+    $scope.image = "";
     $scope.title = "";
     $scope.created = "";
     $scope.release = "";
@@ -238,6 +222,7 @@ app.controller('recipeCtrl', function ($scope, $state, $http) {
 
 
     $scope.recipes = [{
+        'image': '',
         'title': '',
         'created': '',
         'release': '',
@@ -248,9 +233,10 @@ app.controller('recipeCtrl', function ($scope, $state, $http) {
     }];
 
     $scope.addRow = function () {
-        if ($scope.title !== '' && $scope.created !== '' && $scope.release !== '' && $scope.cooking !== '' && $scope.type !== '' && $scope.difficulty !== '' && $scope.servings !== '') {
+        if ($scope.image !== '' && $scope.title !== '' && $scope.created !== '' && $scope.release !== '' && $scope.cooking !== '' && $scope.type !== '' && $scope.difficulty !== '' && $scope.servings !== '') {
 
             $scope.addLatestRecipeRow ({
+                'image': $scope.image,
                 'title': $scope.title,
                 'created': $scope.created,
                 'release': $scope.release,
@@ -259,6 +245,7 @@ app.controller('recipeCtrl', function ($scope, $state, $http) {
                 'difficulty': $scope.difficulty,
                 'servings': $scope.servings
             });
+            $scope.image = '';
             $scope.title = '';
             $scope.created = '';
             $scope.release = '';
@@ -270,10 +257,6 @@ app.controller('recipeCtrl', function ($scope, $state, $http) {
     };
 
 
-    $http.get('recipes.json')
-        .then(function (res) {
-            $scope.recipes = res.data;
-        });
     $('#showRecipeInput').click(function () {
         $('#recipe-submit-dropdown').toggle("slide");
     });
@@ -292,39 +275,41 @@ app.controller('recipeCtrl', function ($scope, $state, $http) {
 app.controller('galleryCtrl', function ($scope) {
     $scope.pageTitle = "Gallery";
 
-    $("#gallery").justifiedGallery({
-        rowNum: 3,
-        rowHeight: 160,
-        lastRow: 'nojustify',
-        margins: 3,
-        cssAnimation: true,
-        sizeRangeSuffixes: {
-            lt100: '_t',
-            lt240: '_m',
-            lt320: '_n',
-            lt500: '',
-            lt640: '_z',
-            lt1024: '_b'
-        }
-    });
-
-    //Gallery
-    function getRandomSize(min, max) {
-        return Math.round(Math.random() * (max - min) + min);
-    }
-
-
-    $(window).scroll(function () {
-        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-            for (var i = 0; i < 5; i++) {
-                var width = getRandomSize(200, 400);
-                var height = getRandomSize(200, 400);
-                $('#gallery').append('<a href="#!/latest">' +
-                    '<img alt="caption for image 1" src="//www.lorempixel.com/' + width + '/' + height + '/food" />' +
-                    '</a>');
+    $(document).ready(function () {
+        $("#gallery").justifiedGallery({
+            rowNum: 3,
+            rowHeight: 160,
+            lastRow: 'nojustify',
+            margins: 3,
+            cssAnimation: true,
+            sizeRangeSuffixes: {
+                lt100: '_t',
+                lt240: '_m',
+                lt320: '_n',
+                lt500: '',
+                lt640: '_z',
+                lt1024: '_b'
             }
-            $('#gallery').justifiedGallery('norewind');
+        });
+
+        //Gallery
+        function getRandomSize(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
         }
+
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                for (var i = 0; i < 5; i++) {
+                    var width = getRandomSize(200, 400);
+                    var height = getRandomSize(200, 400);
+                    $('#gallery').append('<a href="#!/latest">' +
+                        '<img alt="caption for image 1" src="//www.lorempixel.com/' + width + '/' + height + '/food" />' +
+                        '</a>');
+                }
+                $('#gallery').justifiedGallery('norewind');
+            }
+        });
     });
 
 

@@ -16,6 +16,9 @@
     width: 100%;
     overflow: hidden;
 
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
     img {
       position: absolute;
       left: 50%;

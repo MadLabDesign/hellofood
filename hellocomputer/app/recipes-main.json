@@ -1,6 +1,7 @@
 [
   {
-    "title": "Mediterranean 'chicken ’n’ chips'",
+    "image": "http://cdn.jamieoliver.com/recipe-database/xtra_med/CLrw7sbIadHA4H2Op8t1zN.jpg",
+    "title": "Irish stew",
     "created": "Clare Knivett ",
     "release": "1 Jan 2017",
     "cooking": "1 Hour",
@@ -9,25 +10,28 @@
     "servings": "4"
   },
   {
-    "title": "Sesame butterflied chicken",
+    "image": "http://cdn.jamieoliver.com/recipe-database/xtra_med/46260610.jpg",
+    "title": "Leg of lamb with amazing gravy",
     "created": "Jamie Oliver",
     "release": "7 Aug 2017",
     "cooking": "18 min",
-    "type": "Maint",
+    "type": "Main",
     "difficulty": "Not to tricky",
     "servings": "2"
   },
   {
-    "title": "Chicken satay",
+    "image": "http://cdn.jamieoliver.com/recipe-database/xtra_med/7GKYccMjqW2BLUojBtylJK.jpg",
+    "title": "Spring lamb kebabs",
     "created": "John Smith",
     "release": "23 Mar 2017",
     "cooking": "40 min",
-    "type": "Breakfast",
+    "type": "Main",
     "difficulty": "Not to tricky",
     "servings": "4"
   },
   {
-    "title": "Baked chicken & porcini risotto",
+    "image": "http://cdn.jamieoliver.com/recipe-database/xtra_med/46oSUGG4a19BaGOc2ejjSY.jpg",
+    "title": "Lamb chops with ratatouille",
     "created": "Donna Hay",
     "release": "8 Sep 2017",
     "cooking": "1 Hour",
