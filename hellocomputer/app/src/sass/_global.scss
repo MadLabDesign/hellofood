@@ -17,11 +17,25 @@
 
 }
 
-.object-fit_fill { object-fit: fill }
-.object-fit_contain { object-fit: contain }
-.object-fit_cover { object-fit: cover }
-.object-fit_none { object-fit: none }
-.object-fit_scale-down { object-fit: scale-down }
+.object-fit_fill {
+  object-fit: fill
+}
+
+.object-fit_contain {
+  object-fit: contain
+}
+
+.object-fit_cover {
+  object-fit: cover
+}
+
+.object-fit_none {
+  object-fit: none
+}
+
+.object-fit_scale-down {
+  object-fit: scale-down
+}
 
 body {
   width: 100%;
@@ -124,8 +138,6 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   width: 100%;
 
-
-
   .fa-angle-down {
     color: $primary-color;
     @include text-shadow();
@@ -133,13 +145,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sub-nav {
-  margin-top: 80px;
+  margin-top: 0;
   border-top: 1px solid $light-gray;
   height: 50px;
   width: 100%;
   background-color: $white;
   overflow: hidden;
-
 
   ul.inline-list li {
     padding: 10px;
@@ -162,15 +173,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 50px;
 }
 
-
-
 @media only screen and (max-width: 768px) {
   .sub-nav {
-  margin-top: 0;
+    margin-top: 0;
+  }
 }
-}
-
-
 
 //Hero Banner
 #hero {

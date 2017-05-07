@@ -15,8 +15,9 @@
     "gulp-imagemin": "^3.1.1",
     "gulp-postcss": "^6.3.0",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.4.0",
-    "gulp-watch": "^4.3.11"
+    "gulp-sourcemaps": "^2.4.x",
+    "gulp-watch": "^4.3.11",
+    "sassdoc": "^2.2.2"
   },
   "dependencies": {
     "angular-location-decorator": "^1.0.1",
