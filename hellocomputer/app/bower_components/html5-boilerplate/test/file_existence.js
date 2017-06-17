@@ -48,9 +48,9 @@ var expectedFilesInDistDir = [
     'js/',
         'js/main.js',
         'js/plugins.js',
-        'js/vendor/',
-            'js/vendor/jquery-' + pkg.devDependencies.jquery + '.min.js',
-            'js/vendor/modernizr-2.8.3.min.js',
+        'js/scripts/',
+            'js/scripts/jquery-' + pkg.devDependencies.jquery + '.min.js',
+            'js/scripts/modernizr-2.8.3.min.js',
 
     'LICENSE.txt',
     'robots.txt',

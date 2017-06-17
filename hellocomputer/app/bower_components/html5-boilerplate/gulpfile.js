@@ -91,7 +91,7 @@ gulp.task('copy:index.html', function () {
 gulp.task('copy:jquery', function () {
     return gulp.src(['node_modules/jquery/dist/jquery.min.js'])
                .pipe(plugins.rename('jquery-' + pkg.devDependencies.jquery + '.min.js'))
-               .pipe(gulp.dest(dirs.dist + '/js/vendor'));
+               .pipe(gulp.dest(dirs.dist + '/js/scripts'));
 });
 
 gulp.task('copy:license', function () {

@@ -103,10 +103,10 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			_target, //when initting a CSSPlugin, we set this variable so that we can access it from within many other functions without having to pass it around as params
 			_index, //when initting a CSSPlugin, we set this variable so that we can access it from within many other functions without having to pass it around as params
 
-			_prefixCSS = "", //the non-camelCase vendor prefix like "-o-", "-moz-", "-ms-", or "-webkit-"
-			_prefix = "", //camelCase vendor prefix like "O", "ms", "Webkit", or "Moz".
+			_prefixCSS = "", //the non-camelCase scripts prefix like "-o-", "-moz-", "-ms-", or "-webkit-"
+			_prefix = "", //camelCase scripts prefix like "O", "ms", "Webkit", or "Moz".
 
-			// @private feed in a camelCase property name like "transform" and it will check to see if it is valid as-is or if it needs a vendor prefix. It returns the corrected camelCase property name (i.e. "WebkitTransform" or "MozTransform" or "transform" or null if no such property is found, like if the browser is IE8 or before, "transform" won't be found at all)
+			// @private feed in a camelCase property name like "transform" and it will check to see if it is valid as-is or if it needs a scripts prefix. It returns the corrected camelCase property name (i.e. "WebkitTransform" or "MozTransform" or "transform" or null if no such property is found, like if the browser is IE8 or before, "transform" won't be found at all)
 			_checkPropPrefix = function(p, e) {
 				e = e || _tempDiv;
 				var s = e.style,
@@ -1021,7 +1021,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 		 *                      - defaultValue: the default value
 		 *                      - parser: A function that should be called when the associated property name is found in the vars. This function should return a CSSPropTween instance and it should ensure that it is properly inserted into the linked list. It will receive 4 paramters: 1) The target, 2) The value defined in the vars, 3) The CSSPlugin instance (whose _firstPT should be used for the linked list), and 4) A computed style object if one was calculated (this is a speed optimization that allows retrieval of starting values quicker)
 		 *                      - formatter: a function that formats any value received for this special property (for example, boxShadow could take "5px 5px red" and format it to "5px 5px 0px 0px red" so that both the beginning and ending values have a common order and quantity of values.)
-		 *                      - prefix: if true, we'll determine whether or not this property requires a vendor prefix (like Webkit or Moz or ms or O)
+		 *                      - prefix: if true, we'll determine whether or not this property requires a scripts prefix (like Webkit or Moz or ms or O)
 		 *                      - color: set this to true if the value for this SpecialProp may contain color-related values like rgb(), rgba(), etc.
 		 *                      - priority: priority in the linked list order. Higher priority SpecialProps will be updated before lower priority ones. The default priority is 0.
 		 *                      - multi: if true, the formatter should accommodate a comma-delimited list of values, like boxShadow could have multiple boxShadows listed out.

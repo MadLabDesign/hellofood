@@ -63,7 +63,7 @@ function runTests() {
         });
 
         it('"index.html" should contain the correct jQuery version in the local URL', function (done) {
-            var string = 'js/vendor/jquery-' + pkg.devDependencies.jquery + '.min.js';
+            var string = 'js/scripts/jquery-' + pkg.devDependencies.jquery + '.min.js';
             checkString(path.resolve(dir, 'index.html'), string, done);
         });
 

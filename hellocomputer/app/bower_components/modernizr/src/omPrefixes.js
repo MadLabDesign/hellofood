@@ -1,6 +1,6 @@
 define(function() {
   /**
-   * If the browsers follow the spec, then they would expose vendor-specific style as:
+   * If the browsers follow the spec, then they would expose scripts-specific style as:
    *   elem.style.WebkitBorderRadius
    * instead of something like the following, which would be technically incorrect:
    *   elem.style.webkitBorderRadius
@@ -12,7 +12,7 @@ define(function() {
    * More here: github.com/Modernizr/Modernizr/issues/issue/21
    *
    * @access private
-   * @returns {string} The string representing the vendor-specific style properties
+   * @returns {string} The string representing the scripts-specific style properties
    */
 
   var omPrefixes = 'Moz O ms Webkit';
