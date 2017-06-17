@@ -205,7 +205,7 @@ app.controller('introCtrl', function ($scope) {
 
 
 //Recipe Controller
-app.controller('recipeCtrl', function ($scope, $state) {
+app.controller('recipeCtrl', function ($scope, $state, $http) {
     $state.transitionTo('recipes.latest');
     $scope.pageTitle = "The Recipe | Latest";
 
