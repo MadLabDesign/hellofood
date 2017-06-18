@@ -4,7 +4,6 @@ angular
     .module('routerApp')
     .controller('recipeCtrl' , function ($scope, $state, $http) {
         $state.transitionTo('recipes.latest');
-        $scope.pageTitle = "The Recipe | Latest";
 
         $scope.required = true;
 

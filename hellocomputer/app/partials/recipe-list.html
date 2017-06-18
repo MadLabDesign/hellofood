@@ -1,6 +1,14 @@
+<section class="title-intro">
+    <div class="col-md-9">
+        <h2>{{pageTitle}}</h2>
+    </div>
+    <div class="col-md-3">
+        <input type="search" placeholder="search" class="search-bar" ng-model="search">
+    </div>
+</section>
 <section class="recipe-list">
         <ul class="small-block-grid-1 medium-block-grid-2">
-            <li class="recipe-list-input" ng-repeat="recipe in recipes" ng-show="recipe">
+            <li class="recipe-list-input" ng-repeat="recipe in recipes | filter:search" ng-show="recipe">
                 <a ui-sref="single-recipe">
                     <div class="recipe-list-card">
                         <div class="col-md-2">
